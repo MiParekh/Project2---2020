@@ -1,29 +1,29 @@
 import pandas as pd
+import sqlite3
+import json
+from flask import Flask, jsonify, render_template
 
-import sqlalchemy
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func
-from sqlalchemy import desc
+# import sqlalchemy
+# from sqlalchemy.ext.automap import automap_base
+# from sqlalchemy.orm import Session
+# from sqlalchemy import create_engine, func
+# from sqlalchemy import desc
 
-from flask import Flask, jsonify
+# #################################################
+# # Database Setup
+# #################################################
+# engine = create_engine("superheroes.sqlite")
 
+# # reflect an existing database into a new model
+# Base = automap_base()
+# # reflect the tables
+# Base.prepare(engine, reflect=True)
 
-#################################################
-# Database Setup
-#################################################
-engine = create_engine("superheroes.sqlite")
-
-# reflect an existing database into a new model
-Base = automap_base()
-# reflect the tables
-Base.prepare(engine, reflect=True)
-
-# Save reference to the table
-Characters = Base.classes.characters
-Powerstats = Base.classes.powerstats
-Rwpowers = Base.classes.rwpowers
-Bio = Base.classes.bio
+# # Save reference to the table
+# Characters = Base.classes.characters
+# Powerstats = Base.classes.powerstats
+# Rwpowers = Base.classes.rwpowers
+# Bio = Base.classes.bio
 
 #################################################
 # Flask Setup
@@ -35,20 +35,23 @@ app = Flask(__name__)
 # Flask Routes
 #################################################
 
+
 @app.route("/")
 def home():
     return render_template("index.html")
 
-# Convert the query results to a dictionary using `date` as the 
-# key and `prcp` as the value.
+# Character Route
 @app.route("/characters")
-def precipitation():
-    session = Session(engine)
-    results = session.query(Characters).all()
-    session.close()
+def characters():
+    conn = sqlite3.connect("resources/superheroes.sqlite")
+    c = conn.cursor()
+    query = """SELECT * FROM characters"""
+    data = c.execute(query).fetchall()
+    conn.commit()
+    conn.close()
 
     char_list = []
-    for name, alignment, gender in results:
+    for ID, name, alignment, gender, eyecolor, race, haircolor, publisher, skincolor, height, weight in data:
         char_dict = {}
         char_dict["ID"] = ID
         char_dict["Name"] = name
@@ -61,9 +64,83 @@ def precipitation():
         char_dict["SkinColor"] = skincolor
         char_dict["Height"] = height
         char_dict["Weight"] = weight
-        _list.append(char_dict)
-    
+        char_list.append(char_dict)
+
     return jsonify(char_list)
+
+# Power Route
+@app.route("/powerstats")
+def powerstats():
+    conn = sqlite3.connect("resources/superheroes.sqlite")
+    c = conn.cursor()
+    query = """SELECT * FROM powerstats"""
+    data = c.execute(query).fetchall()
+    conn.commit()
+    conn.close()
+
+    power_list = []
+    for name, alignment, intelligence, strength, speed, durability, power, combat, total in data:
+        power_dict = {}
+        power_dict["Name"] = name
+        power_dict["Alignment"] = alignment
+        power_dict["Intelligence"] = intelligence
+        power_dict["Strength"] = strength
+        power_dict["Speed"] = speed
+        power_dict["Durability"] = durability
+        power_dict["Power"] = power
+        power_dict["Combat"] = combat
+        power_dict["Total"] = total
+        power_list.append(power_dict)
+
+    return jsonify(power_list)
+
+# RWPowers
+@app.route("/rwpowers")
+def rwpowers():
+    conn = sqlite3.connect("resources/superheroes.sqlite")
+    c = conn.cursor()
+    query = """SELECT * FROM rwpowers"""
+    data = c.execute(query).fetchall()
+    conn.commit()
+    conn.close()
+
+    rw_list = []
+    for superhero, superpower, issueresolution in data:
+        rw_dict = {}
+        rw_dict["superhero"] = superhero
+        rw_dict["superpower"] = superpower
+        rw_dict["issueresolution"] = issueresolution
+        rw_list.append(rw_dict)
+
+    return jsonify(rw_list)
+
+# Bio
+@app.route("/bio")
+def bio():
+    conn = sqlite3.connect("resources/superheroes.sqlite")
+    c = conn.cursor()
+    query = """SELECT * FROM bio"""
+    data = c.execute(query).fetchall()
+    conn.commit()
+    conn.close()
+
+    bio_list = []
+    for name, full_name, alter_egos, birthplace, occupation, image_url in data:
+        bio_dict = {}
+        bio_dict["name"] = name
+        bio_dict["full_name"] = full_name
+        bio_dict["alter_egos"] = alter_egos
+        bio_dict["birthplace"] = birthplace
+        bio_dict["occupation"] = occupation
+        bio_dict["image_url"] = image_url
+        bio_list.append(bio_dict)
+
+    return jsonify(bio_list)
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
