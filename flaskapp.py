@@ -1,29 +1,29 @@
 import pandas as pd
+import sqlite3
+import json
+from flask import Flask, jsonify, render_template
 
-import sqlalchemy
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func
-from sqlalchemy import desc
+# import sqlalchemy
+# from sqlalchemy.ext.automap import automap_base
+# from sqlalchemy.orm import Session
+# from sqlalchemy import create_engine, func
+# from sqlalchemy import desc
 
-from flask import Flask, jsonify
+# #################################################
+# # Database Setup
+# #################################################
+# engine = create_engine("superheroes.sqlite")
 
+# # reflect an existing database into a new model
+# Base = automap_base()
+# # reflect the tables
+# Base.prepare(engine, reflect=True)
 
-#################################################
-# Database Setup
-#################################################
-engine = create_engine("superheroes.sqlite")
-
-# reflect an existing database into a new model
-Base = automap_base()
-# reflect the tables
-Base.prepare(engine, reflect=True)
-
-# Save reference to the table
-Characters = Base.classes.characters
-Powerstats = Base.classes.powerstats
-Rwpowers = Base.classes.rwpowers
-Bio = Base.classes.bio
+# # Save reference to the table
+# Characters = Base.classes.characters
+# Powerstats = Base.classes.powerstats
+# Rwpowers = Base.classes.rwpowers
+# Bio = Base.classes.bio
 
 #################################################
 # Flask Setup
@@ -39,16 +39,17 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-# Convert the query results to a dictionary using `date` as the 
-# key and `prcp` as the value.
 @app.route("/characters")
-def precipitation():
-    session = Session(engine)
-    results = session.query(Characters).all()
-    session.close()
+def characters():
+    conn = sqlite3.connect("resources/superheroes.sqlite")
+    c = conn.cursor()
+    query = """SELECT * FROM characters"""
+    data = c.execute(query).fetchall()
+    conn.commit()
+    conn.close()
 
     char_list = []
-    for name, alignment, gender in results:
+    for ID, name, alignment, gender, eyecolor, race, haircolor, publisher, skincolor, height, weight in data:
         char_dict = {}
         char_dict["ID"] = ID
         char_dict["Name"] = name
@@ -61,9 +62,10 @@ def precipitation():
         char_dict["SkinColor"] = skincolor
         char_dict["Height"] = height
         char_dict["Weight"] = weight
-        _list.append(char_dict)
-    
+        char_list.append(char_dict)
+
     return jsonify(char_list)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
