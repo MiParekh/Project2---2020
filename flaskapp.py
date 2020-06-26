@@ -35,10 +35,12 @@ app = Flask(__name__)
 # Flask Routes
 #################################################
 
+
 @app.route("/")
 def home():
     return render_template("index.html")
 
+# Character Route
 @app.route("/characters")
 def characters():
     conn = sqlite3.connect("resources/superheroes.sqlite")
@@ -66,6 +68,79 @@ def characters():
 
     return jsonify(char_list)
 
+# Power Route
+@app.route("/powerstats")
+def powerstats():
+    conn = sqlite3.connect("resources/superheroes.sqlite")
+    c = conn.cursor()
+    query = """SELECT * FROM powerstats"""
+    data = c.execute(query).fetchall()
+    conn.commit()
+    conn.close()
+
+    power_list = []
+    for name, alignment, intelligence, strength, speed, durability, power, combat, total in data:
+        power_dict = {}
+        power_dict["Name"] = name
+        power_dict["Alignment"] = alignment
+        power_dict["Intelligence"] = intelligence
+        power_dict["Strength"] = strength
+        power_dict["Speed"] = speed
+        power_dict["Durability"] = durability
+        power_dict["Power"] = power
+        power_dict["Combat"] = combat
+        power_dict["Total"] = total
+        power_list.append(power_dict)
+
+    return jsonify(power_list)
+
+# RWPowers
+@app.route("/rwpowers")
+def rwpowers():
+    conn = sqlite3.connect("resources/superheroes.sqlite")
+    c = conn.cursor()
+    query = """SELECT * FROM rwpowers"""
+    data = c.execute(query).fetchall()
+    conn.commit()
+    conn.close()
+
+    rw_list = []
+    for superhero, superpower, issueresolution in data:
+        rw_dict = {}
+        rw_dict["superhero"] = superhero
+        rw_dict["superpower"] = superpower
+        rw_dict["issueresolution"] = issueresolution
+        rw_list.append(rw_dict)
+
+    return jsonify(rw_list)
+
+# Bio
+@app.route("/bio")
+def bio():
+    conn = sqlite3.connect("resources/superheroes.sqlite")
+    c = conn.cursor()
+    query = """SELECT * FROM bio"""
+    data = c.execute(query).fetchall()
+    conn.commit()
+    conn.close()
+
+    bio_list = []
+    for name, full_name, alter_egos, birthplace, occupation, image_url in data:
+        bio_dict = {}
+        bio_dict["name"] = name
+        bio_dict["full_name"] = full_name
+        bio_dict["alter_egos"] = alter_egos
+        bio_dict["birthplace"] = birthplace
+        bio_dict["occupation"] = occupation
+        bio_dict["image_url"] = image_url
+        bio_list.append(bio_dict)
+
+    return jsonify(bio_list)
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
