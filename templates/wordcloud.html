@@ -5,66 +5,41 @@
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="description" name="description">
+  <meta content="Page description" name="description">
   <meta name="google" content="notranslate" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta content="Mashup templates have been developped by Orson.io team" name="author">
 
   <!-- Disable tap highlight on IE -->
   <meta name="msapplication-tap-highlight" content="no">
-
-  <link href="./assets/apple-icon-180x180.png" rel="apple-touch-icon">
-  <link href="./assets/favicon.ico" rel="icon">
-
-  <title>Title page</title>
-
-  <link href="./main.82cfd66e.css" rel="stylesheet">
-
-  <!-- Added Style Sheet -->
+  <link href="../assets/apple-icon-180x180.png" rel="apple-touch-icon">
+  <link href="../assets/favicon.ico" rel="icon">
+  <title>Word Cloud | The Superhero Network</title>
+  <link href="main.82cfd66e.css" rel="stylesheet">
   <link rel="stylesheet" href="../static/css/style.css">
+
 </head>
 
 <body>
-
-  <!-- Add your content of header -->
   <header class="">
-    <div class="navbar navbar-default visible-xs">
-      <button type="button" class="navbar-toggle collapsed">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="./index.html" class="navbar-brand">Need a Hero?</a>
-    </div>
-
-    <nav class="sidebar">
+      <nav class="sidebar">
       <div class="navbar-collapse" id="navbar-collapse">
         <div class="site-header hidden-xs">
-          <a class="site-brand" href="./index.html" title="">
-            <img class="img-responsive site-logo" alt="" src="./assets/images/mashup-logo.svg">
-            Need a Hero?
+          <a class="site-brand" href="index.html" title="">
+            <img class="img-responsive site-logo" alt="" src="../assets/images/mashup-logo.svg">
+            SUPERHERO NETWORK
           </a>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor.</p>
         </div>
         <ul class="nav">
-          <li><a href="index.html" title="">Home</a></li>
-          <li><a href="about.html" title="">About</a></li>
-          <li><a href="services.html" title="">Services</a></li>
-          <li><a href="sunburst.html" title="">sunburst: Superhero Statistics</a></li>
-          <li><a href="bar.html" title="">bar: Superhero Power Statistics</a></li>
-          <!-- <li><a href="wordcloud.html" title="">Word cloud: Real World Resolution</a></li> -->
-          <li><a href="scatter.html" title="">Scatter: Power</a></li>
-          <li><a href="extra.html" title="">Extra</a></li>
-          <li><a href="components.html" title="">Originial Components for Consistent webpage look</a></li>
-          <li><a href="contact.html" title="">Contact a Hero</a></li>
-
+          <li><a href="index.html" title="Home">Home</a></li>
+          <li><a href="profile.html" title="Superheroes Profile">Superheroes</a></li>
+          <li><a href="charts.html" title="Analytics">Analytics</a></li>
+          
         </ul>
 
-        <!-- CREDIT DONT REMOVE -->
+        <!-- CREDIT DON'T REMOVE -->
         <nav class="nav-footer">
-          <p class="nav-footer-social-buttons">
+          <!-- MAYBE ADD THE CUTE HERO ICONS FORM POWERPOINT HERE INSTEAD???? -->
+          <!-- <p class="nav-footer-social-buttons">
             <a class="fa-icon" href="https://www.instagram.com/" title="">
               <i class="fa fa-instagram"></i>
             </a>
@@ -74,49 +49,40 @@
             <a class="fa-icon" href="https://twitter.com/" title="">
               <i class="fa fa-twitter"></i>
             </a>
-          </p>
-          <p>© Untitled | Website created with <a href="http://www.mashup-template.com/"
+          </p> -->
+          <p>© Superhero Network | Created with <a href="http://www.mashup-template.com/"
               title="Create website with free html template">Mashup Template</a>/<a href="https://www.unsplash.com/"
               title="Beautiful Free Images">Unsplash</a></p>
         </nav>
       </div>
     </nav>
   </header>
+  
   <main class="" id="main-collapse">
-
-
     <div class="row">
       <div class="col-xs-12 col-md-8">
 
         <div class="section-container-spacer">
-          <h1>Real World Resolution</h1>
-          <div id="wordcloud"></div>
+          <h2>The Superheroes Who Can Save the Earth</h2>
+          <div id="wordcloud">
+            <svg>
+              <!-- insert d3 chart here -->
+            </svg>
+          </div>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
             consequat.</p>
         </div>
-
-        <div class="section-container-spacer">
-          <p><img class="img-responsive" alt="" src="../assets/images/img-12.jpg"></p>
-          <div class="row">
-            <div class="col-xs-12 col-md-6">
-              <p><img class="img-responsive" alt="" src="../assets/images/img-13.jpg"></p>
-            </div>
-            <div class="col-xs-12 col-md-6">
-              <p><img class="img-responsive" alt="" src="../assets/images/img-14.jpg"></p>
-            </div>
-          </div>
-        </div>
-
-        <p> Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-
+    
     </div>
 
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function (event) {
+        masonryBuild();
+      });
+    </script>
 
   </main>
 
@@ -141,7 +107,7 @@
 </script>
 
 -->
-<!-- Added D3, JQuery, Bootstrap -->
+  <!-- Added D3, JQuery, Bootstrap -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -153,12 +119,13 @@
     crossorigin="anonymous"></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
-  
-  <!-- Prebuilt script element -->
-  <script type="text/javascript" src="./main.85741bff.js"></script>
 
-  <!-- Added wordcloud js file -->
-  <script type="text/javascript" src="../static/js/wordcloud.js"></script>
+  <!-- Prebuilt script element -->
+  <script type="text/javascript" src="main.85741bff.js"></script>
+  <script type="text/javascript" src="wordcloud.js"></script>
+
+
+
 </body>
 
 </html>
