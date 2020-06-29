@@ -1,7 +1,7 @@
 import pandas as pd
 import sqlite3
 import json
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, url_for
 
 # import sqlalchemy
 # from sqlalchemy.ext.automap import automap_base
@@ -36,9 +36,46 @@ app = Flask(__name__)
 #################################################
 
 
+#################################################
+# HTML ROUTES
+
 @app.route("/")
 def home():
     return render_template("index.html")
+
+@app.route("/profile")
+def profile():
+    return render_template("profile.html")
+
+@app.route("/charts")
+def charts():
+    return render_template("charts.html")
+
+@app.route("/bar")
+def bar():
+    return render_template("bar.html")
+
+@app.route("/scatter")
+def scatter():
+    return render_template("scatter.html")
+
+@app.route("/sunburst")
+def sunburst():
+    return render_template("sunburst.html")
+
+@app.route("/wordcloud")
+def wordcloud():
+    return render_template("wordcloud.html")
+
+
+
+
+
+
+
+
+#################################################
+# JS ROUTES
 
 # Character Route
 @app.route("/characters")
@@ -67,6 +104,7 @@ def characters():
         char_list.append(char_dict)
 
     return jsonify(char_list)
+
 
 # Power Route
 @app.route("/powerstats")
@@ -137,29 +175,29 @@ def bio():
 
     return jsonify(bio_list)
 
-# # Bio
-# @app.route("/profile")
-# def bio():
-#     conn = sqlite3.connect("resources/superheroes.sqlite")
-#     c = conn.cursor()
-#     query = """SELECT * FROM bio
-#                 WHERE name = chosenCharacter"""
-#     data = c.execute(query).fetchall()
-#     conn.commit()
-#     conn.close()
+# chosenCharacter
+@app.route("/<chosenCharacter>")
+def chosenCharacter():
+    conn = sqlite3.connect("resources/superheroes.sqlite")
+    c = conn.cursor()
+    query = """SELECT * FROM bio
+                WHERE name = chosenCharacter"""
+    data = c.execute(query).fetchall()
+    conn.commit()
+    conn.close()
 
-#     bio_list = []
-#     for name, full_name, alter_egos, birthplace, occupation, image_url in data:
-#         bio_dict = {}
-#         bio_dict["name"] = name
-#         bio_dict["full_name"] = full_name
-#         bio_dict["alter_egos"] = alter_egos
-#         bio_dict["birthplace"] = birthplace
-#         bio_dict["occupation"] = occupation
-#         bio_dict["image_url"] = image_url
-#         bio_list.append(bio_dict)
+    bio_list = []
+    for name, full_name, alter_egos, birthplace, occupation, image_url in data:
+        bio_dict = {}
+        bio_dict["name"] = name
+        bio_dict["full_name"] = full_name
+        bio_dict["alter_egos"] = alter_egos
+        bio_dict["birthplace"] = birthplace
+        bio_dict["occupation"] = occupation
+        bio_dict["image_url"] = image_url
+        bio_list.append(bio_dict)
 
-#     return jsonify(bio_list)
+    return jsonify(bio_list)
 
 
 if __name__ == '__main__':

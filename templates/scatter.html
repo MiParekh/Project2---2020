@@ -11,25 +11,11 @@
 
   <!-- Disable tap highlight on IE -->
   <meta name="msapplication-tap-highlight" content="no">
-  <link href="../assets/apple-icon-180x180.png" rel="apple-touch-icon">
+  <link href="{{ url_for('static', filename='assets/apple-icon-180x180.png') }}" rel="apple-touch-icon">
   <link href="../assets/favicon.ico" rel="icon">
   <title>Scatter | The Superhero Network</title>
-  <link href="main.82cfd66e.css" rel="stylesheet">
-  <link rel="stylesheet" href="../static/css/style.css">
-
-   <!-- Added D3, JQuery, Bootstrap -->
-   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-   integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-   crossorigin="anonymous"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-   integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-   crossorigin="anonymous"></script>
- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-   integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-   crossorigin="anonymous"></script>
- <script src="https://d3js.org/d3.v5.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
-
+  <link href="{{ url_for('static', filename='css/main.82cfd66e.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
 </head>
 
@@ -38,15 +24,15 @@
       <nav class="sidebar">
       <div class="navbar-collapse" id="navbar-collapse">
         <div class="site-header hidden-xs">
-          <a class="site-brand" href="index.html" title="">
-            <img class="img-responsive site-logo" alt="" src="../assets/images/mashup-logo.svg">
+          <a class="site-brand" href="/" title="">
+            <img class="img-responsive site-logo" alt="" src="{{ url_for('static', filename='assets/images/icon.png') }}" width="100px" height="400px">
             SUPERHERO NETWORK
           </a>
         </div>
         <ul class="nav">
-          <li><a href="index.html" title="Home">Home</a></li>
-          <li><a href="profile.html" title="Superheroes Profile">Superheroes</a></li>
-          <li><a href="charts.html" title="Analytics">Analytics</a></li>
+          <li><a href="/" title="Home">Home</a></li>
+          <li><a href="/profile" title="Superheroes Profile">Superheroes</a></li>
+          <li><a href="/charts" title="Analytics">Analytics</a></li>
           
         </ul>
 
@@ -83,6 +69,7 @@
               <!-- insert d3 chart here -->
             </svg>
           </div>
+          <h6>Analysis</h6>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -122,6 +109,18 @@
 
 -->
  
+  <!-- Added D3, JQuery, Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
   <!-- Prebuilt script element -->
   <script type="text/javascript" src="main.85741bff.js"></script>
   <script type="text/javascript" src="scatter.js"></script>

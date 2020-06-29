@@ -11,11 +11,11 @@
 
   <!-- Disable tap highlight on IE -->
   <meta name="msapplication-tap-highlight" content="no">
-  <link href="../assets/apple-icon-180x180.png" rel="apple-touch-icon">
+  <link href="{{ url_for('static', filename='assets/apple-icon-180x180.png') }}" rel="apple-touch-icon">
   <link href="../assets/favicon.ico" rel="icon">
   <title>Home | The Superhero Network</title>
-  <link href="main.82cfd66e.css" rel="stylesheet">
-  <link rel="stylesheet" href="../static/css/style.css">
+  <link href="{{ url_for('static', filename='css/main.82cfd66e.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
 </head>
 
@@ -24,15 +24,16 @@
       <nav class="sidebar">
       <div class="navbar-collapse" id="navbar-collapse">
         <div class="site-header hidden-xs">
-          <a class="site-brand" href="index.html" title="">
-            <img class="img-responsive site-logo" alt="" src="../assets/images/mashup-logo.svg">
+          <a class="site-brand" href="/" title="">
+            <img class="img-responsive site-logo" alt="" src="{{ url_for('static', filename='assets/images/icon.png') }}" width="100px" height="400px">
             SUPERHERO NETWORK
+            HELLO
           </a>
         </div>
         <ul class="nav">
-          <li><a href="index.html" title="Home">Home</a></li>
-          <li><a href="profile.html" title="Superheroes Profile">Superheroes</a></li>
-          <li><a href="charts.html" title="Analytics">Analytics</a></li>
+          <li><a href="/" title="Home">Home</a></li>
+          <li><a href="/profile" title="Superheroes Profile">Superheroes</a></li>
+          <li><a href="/charts" title="Analytics">Analytics</a></li>
           
         </ul>
 
@@ -65,8 +66,8 @@
         <div class="grid-sizer"></div>
 
         <div class="grid-item">
-          <img class="img-responsive" id="mainphoto" alt="Superhero Profile" src="../assets/images/sh1.jpg">
-          <a href="profile.html" class="project-description">
+          <img class="img-responsive" id="mainphoto" alt="Superhero Profile" src="{{ url_for('static', filename='assets/images/sh1.jpg') }}">
+          <a href="/profile" class="project-description">
             <div class="project-text-holder">
               <div class="project-text-inner">
                 <h3>Get to know the Superheroes</h3>
@@ -78,8 +79,8 @@
 
 
         <div class="grid-item">
-          <img class="img-responsive" id="mainphoto" alt="Analytics" src="../assets/images/sh2.jpg">
-          <a href="charts.html" class="project-description">
+          <img class="img-responsive" id="mainphoto" alt="Analytics" src="{{ url_for('static', filename='assets/images/sh2.jpg') }}">
+          <a href="/charts" class="project-description">
             <div class="project-text-holder">
               <div class="project-text-inner">
                 <h3>Analytics</h3>
