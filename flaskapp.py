@@ -35,10 +35,35 @@ app = Flask(__name__)
 # Flask Routes
 #################################################
 
-
+# HTML Routes
 @app.route("/")
 def home():
     return render_template("index.html")
+
+@app.route("/profile")
+def profile():
+    return render_template("profile.html")
+
+@app.route("/charts")
+def charts():
+    return render_template("charts.html")
+
+@app.route("/bar")
+def bar():
+    return render_template("bar.html")
+
+@app.route("/scatter")
+def scatter():
+    return render_template("scatter.html")
+
+@app.route("/sunburst")
+def sunburst():
+    return render_template("sunburst.html")
+
+@app.route("/wordcloud")
+def wordcloud():
+    return render_template("wordcloud.html")
+
 
 # Character Route
 @app.route("/characters")
