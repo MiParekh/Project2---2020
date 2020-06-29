@@ -13,7 +13,7 @@
   <meta name="msapplication-tap-highlight" content="no">
   <link href="{{ url_for('static', filename='assets/apple-icon-180x180.png') }}" rel="apple-touch-icon">
   <link href="../assets/favicon.ico" rel="icon">
-  <title>Home | The Superhero Network</title>
+  <title>Analytics | The Superhero Network</title>
   <link href="{{ url_for('static', filename='css/main.82cfd66e.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
@@ -65,8 +65,8 @@
         <div class="grid-sizer"></div>
 
         <div class="grid-item">
-          <img class="img-responsive" id="chartphoto" alt="sunburst chart" src="../assets/images/sunburst.PNG">
-          <a href="sunburst.html" class="project-description">
+          <img class="img-responsive" id="chartphoto" alt="sunburst chart" src="{{ url_for('static', filename='assets/images/sunburst.PNG') }}">
+          <a href="/sunburst" class="project-description">
             <div class="project-text-holder">
               <div class="project-text-inner">
                 <h3>Superhero Demographics</h3>
@@ -78,8 +78,8 @@
 
 
         <div class="grid-item">
-          <img class="img-responsive" id="chartphoto" alt="scatter chart" src="../assets/images/scatter.PNG">
-          <a href="scatter.html" class="project-description">
+          <img class="img-responsive" id="chartphoto" alt="scatter chart" src="{{ url_for('static', filename='assets/images/scatter.PNG') }}">
+          <a href="/scatter" class="project-description">
             <div class="project-text-holder">
               <div class="project-text-inner">
                 <h3>Superpowers</h3>
@@ -90,8 +90,8 @@
         </div>
 
         <div class="grid-item">
-            <img class="img-responsive" id="chartphoto" alt="bar chart" src="../assets/images/bar.PNG">
-            <a href="bar.html" class="project-description">
+            <img class="img-responsive" id="chartphoto" alt="bar chart" src="{{ url_for('static', filename='assets/images/bar.PNG') }}">
+            <a href="/bar" class="project-description">
               <div class="project-text-holder">
                 <div class="project-text-inner">
                   <h3>Strongest Superheroes</h3>
@@ -99,11 +99,11 @@
                 </div>
               </div>
             </a>
-          </div>
+        </div>
 
           <div class="grid-item">
-            <img class="img-responsive" id="chartphoto" alt="word cloud" src="../assets/images/wordcloud.PNG">
-            <a href="wordcloud.html" class="project-description">
+            <img class="img-responsive" id="chartphoto" alt="word cloud" src="{{ url_for('static', filename='assets/images/wordcloud.PNG') }}">
+            <a href="/wordcloud" class="project-description">
               <div class="project-text-holder">
                 <div class="project-text-inner">
                   <h3>The Superheroes Who</h3>
