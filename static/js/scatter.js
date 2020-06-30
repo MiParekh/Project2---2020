@@ -142,7 +142,7 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup) {
 
 //pull in data from data.csv
 
-d3.json(powerstats, function(data){
+d3.json(powerstats).then(function(data){
 
     console.log(Data);
 
@@ -178,20 +178,20 @@ d3.json(powerstats, function(data){
     
     var circleColor  
         if (data.Alignment === "good") {
-            heroClass = "heroCirclegood";
+            circleColor = "heroCirclegood";
         }
         else {
-            heroClass = "heroClassbad";
+            circleColor = "heroClassbad";
         }  
     var circlesGroup = chartGroup.selectAll("circle")
         .data(superheroStats)
         .enter()
         .append("circle")
-        .classed(heroClass, true)
+        .classed(circleColor, true)
         .attr("cx", d => xLinearScale(d[chosenXAxis]))
         .attr("cy", d => yLinearScale(d[chosenYAxis]))
         .attr("r", 20)
-        .attr("fill", "pink")
+        //.attr("fill", "pink")
         .attr("opacity", ".5");
 
     //append Initial Text
