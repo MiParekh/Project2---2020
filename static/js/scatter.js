@@ -1,4 +1,3 @@
-// Mitesh
 
 var powerstats = "/powerstats"
 
@@ -144,7 +143,9 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup) {
 
 d3.json(powerstats).then(function(data){
 
-    console.log(Data);
+    console.log(data);
+
+    var superheroStats = data;
 
     superheroStats.forEach(function (data) {
         data.Power = +data.Power;
