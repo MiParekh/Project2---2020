@@ -1,3 +1,4 @@
+// Mitesh
 
 var powerstats = "/powerstats"
 
@@ -123,8 +124,10 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup) {
         .attr("class", "d3-tip")
         .offset([80, 0])
         .html(function (d) {
-            return (`${d.Name}<br>${xlabel} ${tipStyleX(d[chosenXAxis], chosenXAxis)}<br>${ylabel} ${d[chosenYAxis]}%`);
+            return (`${d.Name}<br>${xlabel} ${d[chosenXAxis]}<br>${ylabel} ${d[chosenYAxis]}`);
         });
+
+    console.log(toolTip);
 
     circlesGroup.call(toolTip);
 
@@ -144,8 +147,6 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup) {
 d3.json(powerstats).then(function(data){
 
     console.log(data);
-
-    var superheroStats = data;
 
     superheroStats.forEach(function (data) {
         data.Power = +data.Power;
@@ -192,7 +193,7 @@ d3.json(powerstats).then(function(data){
         .attr("cx", d => xLinearScale(d[chosenXAxis]))
         .attr("cy", d => yLinearScale(d[chosenYAxis]))
         .attr("r", 20)
-        //.attr("fill", "pink")
+        .attr("fill", "pink")
         .attr("opacity", ".5");
 
     //append Initial Text
