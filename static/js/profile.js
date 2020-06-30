@@ -1,4 +1,4 @@
-var link = "/profile"
+var link = "/profile/<chosenCharacter>"
 
           d3.json(link).then( (data)=>{
             console.log(data);
@@ -8,9 +8,29 @@ var link = "/profile"
             var dropdownMenu = d3.select("#selDataset");
             var panelbox = d3.select("#sample-metadata");
             panelbox.html("");
-            d3.json("samples.json").then((data)=>{
+            d3.json(link).then((data)=>{
                 
                 // dashboard and panelbox
+                var alphabet = ["A", "B", "C", "D", "Z"];
+
+                // check js and plotly homework
+
+                // get alphabet dropdown
+                
+                // generate list of characters as elements
+
+                
+
+                
+
+                data.forEach(() => {
+                        var row = tbody.append("li");
+                        Object.entries(sighting).forEach(([key, value]) => {
+                        var cell = row.append("td");
+                        cell.text(value);
+                        });
+                });
+
                 var names = data.names
                 names.forEach(function(d) {
                         dropdownMenu.append("option")

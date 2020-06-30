@@ -176,13 +176,14 @@ def bio():
     return jsonify(bio_list)
 
 # chosenCharacter
-@app.route("/<chosenCharacter>")
-def chosenCharacter():
+@app.route("/profile/<chosenCharacter>")
+def chosenCharacter(chosenCharacter):
     conn = sqlite3.connect("resources/superheroes.sqlite")
     c = conn.cursor()
-    query = """SELECT * FROM bio
-                WHERE name = chosenCharacter"""
+    query = f"""SELECT * FROM bio
+                WHERE name ='{chosenCharacter.title()}'"""
     data = c.execute(query).fetchall()
+    print(data)
     conn.commit()
     conn.close()
 
