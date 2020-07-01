@@ -21,11 +21,12 @@
 
 <body>
   <header class="">
-      <nav class="sidebar">
+    <nav class="sidebar">
       <div class="navbar-collapse" id="navbar-collapse">
         <div class="site-header hidden-xs">
           <a class="site-brand" href="/" title="">
-            <img class="img-responsive site-logo" alt="" src="{{ url_for('static', filename='assets/images/icon.png') }}" width="100px" height="400px">
+            <img class="img-responsive site-logo" alt=""
+              src="{{ url_for('static', filename='assets/images/icon.png') }}" width="100px" height="400px">
             SUPERHERO NETWORK
           </a>
         </div>
@@ -33,7 +34,7 @@
           <li><a href="/" title="Home">Home</a></li>
           <li><a href="/profile" title="Superheroes Profile">Superheroes</a></li>
           <li><a href="/charts" title="Analytics">Analytics</a></li>
-          
+
         </ul>
 
         <!-- CREDIT DON'T REMOVE -->
@@ -57,72 +58,85 @@
       </div>
     </nav>
   </header>
-  
+
   <main class="" id="main-collapse">
     <div class="hero-full-wrapper">
       <div class="grid">
         <div class="gutter-sizer"></div>
         <div class="grid-sizer"></div>
 
-        <div class="grid-item">
-          <img class="img-responsive" id="chartphoto" alt="sunburst chart" src="{{ url_for('static', filename='assets/images/sunburst.PNG') }}">
-          <a href="/sunburst" class="project-description">
-            <div class="project-text-holder">
-              <div class="project-text-inner">
-                <h3>Superhero Demographics</h3>
-                <p>Discover More</p>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="grid-item">
+                <img class="img-responsive" id="chartphoto" alt="sunburst chart"
+                  src="{{ url_for('static', filename='assets/images/sunburst.PNG') }}">
+                <a href="/sunburst" class="project-description">
+                  <div class="project-text-holder">
+                    <div class="project-text-inner">
+                      <h3>Superhero Demographics</h3>
+                      <p>Discover More</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+
+              <div class="grid-item">
+                <img class="img-responsive" id="chartphoto" alt="scatter chart"
+                  src="{{ url_for('static', filename='assets/images/scatter.PNG') }}">
+                <a href="/scatter" class="project-description">
+                  <div class="project-text-holder">
+                    <div class="project-text-inner">
+                      <h3>Superpowers</h3>
+                      <p>Discover More</p>
+                    </div>
+                  </div>
+                </a>
               </div>
             </div>
-          </a>
-        </div>
-
-
-        <div class="grid-item">
-          <img class="img-responsive" id="chartphoto" alt="scatter chart" src="{{ url_for('static', filename='assets/images/scatter.PNG') }}">
-          <a href="/scatter" class="project-description">
-            <div class="project-text-holder">
-              <div class="project-text-inner">
-                <h3>Superpowers</h3>
-                <p>Discover More</p>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="grid-item">
-            <img class="img-responsive" id="chartphoto" alt="bar chart" src="{{ url_for('static', filename='assets/images/bar.PNG') }}">
-            <a href="/bar" class="project-description">
-              <div class="project-text-holder">
-                <div class="project-text-inner">
-                  <h3>Strongest Superheroes</h3>
-                  <p>Discover More</p>
-                </div>
-              </div>
-            </a>
-        </div>
-
-          <div class="grid-item">
-            <img class="img-responsive" id="chartphoto" alt="word cloud" src="{{ url_for('static', filename='assets/images/wordcloud.PNG') }}">
-            <a href="/wordcloud" class="project-description">
-              <div class="project-text-holder">
-                <div class="project-text-inner">
-                  <h3>The Superheroes Who</h3>
-                  <h3>Can Save the Earth</h3>
-                  <p>Discover More</p>
-                </div>
-              </div>
-            </a>
           </div>
+        </div>
 
-      </div>
-    </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="grid-item">
+                <img class="img-responsive" id="chartphoto" alt="bar chart"
+                  src="{{ url_for('static', filename='assets/images/bar.PNG') }}">
+                <a href="/bar" class="project-description">
+                  <div class="project-text-holder">
+                    <div class="project-text-inner">
+                      <h3>Strongest Superheroes</h3>
+                      <p>Discover More</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="grid-item">
+                <img class="img-responsive" id="chartphoto" alt="word cloud"
+                  src="{{ url_for('static', filename='assets/images/wordcloud.PNG') }}">
+                <a href="/wordcloud" class="project-description">
+                  <div class="project-text-holder">
+                    <div class="project-text-inner">
+                      <h3>The Superheroes Who</h3>
+                      <h3>Can Save the Earth</h3>
+                      <p>Discover More</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function (event) {
-        masonryBuild();
-      });
-    </script>
+        <script>
+          document.addEventListener("DOMContentLoaded", function (event) {
+            masonryBuild();
+          });
+        </script>
 
   </main>
 

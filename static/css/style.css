@@ -11,3 +11,8 @@
     height:100%;
 
 }
+
+.container{
+    grid-template-columns: 100px 100px;
+    grid-row: ;
+}
