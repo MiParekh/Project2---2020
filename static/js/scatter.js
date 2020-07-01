@@ -3,8 +3,8 @@
 var powerstats = "/powerstats"
 
 // @TODO: YOUR CODE HERE!
-var svgWidth = 960;
-var svgHeight = 720;
+var svgWidth = 2000;
+var svgHeight = 2000;
 
 var margin = {
     top: 20,
@@ -92,6 +92,16 @@ function renderCircles(circlesGroup, newXScale, chosenXAxis, newYScale, chosenYA
     return circlesGroup;
 }
 
+function renderName(nameGroup, newXScale, chosenXAxis, newYScale, chosenYAxis) {
+
+    nameGroup.transition()
+        .duration(1000)
+        .attr("x", d => newXScale(d[chosenXAxis]))
+        .attr("y", d => newYScale(d[chosenYAxis]));
+
+    return nameGroup;
+}
+
 
 // function used for updating circles group with new tooltip
 function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup) {
@@ -124,10 +134,10 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup) {
         .attr("class", "d3-tip")
         .offset([80, 0])
         .html(function (d) {
-            return (`${d.Name}<br>${xlabel} ${d[chosenXAxis]}<br>${ylabel} ${d[chosenYAxis]}`);
+            return (`${d.Name}<br>${xlabel}: ${d[chosenXAxis]}<br>${ylabel}: ${d[chosenYAxis]}`);
         });
 
-    console.log(toolTip);
+    //console.log(toolTip);
 
     circlesGroup.call(toolTip);
 
@@ -144,9 +154,9 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup) {
 
 //pull in data from data.csv
 
-d3.json(powerstats).then(function(data){
+d3.json(powerstats).then(function(superheroStats){
 
-    console.log(data);
+    console.log(superheroStats);
 
     superheroStats.forEach(function (data) {
         data.Power = +data.Power;
@@ -155,6 +165,8 @@ d3.json(powerstats).then(function(data){
         data.Combat + data.Combat;
         data.Durability = +data.Durability;
         data.Intelligence = +data.Intelligence;
+        data.Alignment = data.Alignment;
+        data.Name = data.Name;
     });
 
     // X and Y LinearScale function above csv import
@@ -178,36 +190,38 @@ d3.json(powerstats).then(function(data){
 
     // append initial circles
     
-    var circleColor  
-        if (data.Alignment === "good") {
-            circleColor = "heroCirclegood";
-        }
-        else {
-            circleColor = "heroClassbad";
-        }  
+   
     var circlesGroup = chartGroup.selectAll("circle")
         .data(superheroStats)
         .enter()
         .append("circle")
-        .classed(circleColor, true)
         .attr("cx", d => xLinearScale(d[chosenXAxis]))
         .attr("cy", d => yLinearScale(d[chosenYAxis]))
         .attr("r", 20)
-        .attr("fill", "pink")
-        .attr("opacity", ".5");
+        .attr("opacity", ".5")
+        .attr("class", function(d) {
+        if (d.Alignment === "good") {
+            return "heroCirclegood";
+        }
+        else {
+            return "heroCirclebad";
+        }  
+
+        });
+
 
     //append Initial Text
     var textGroup = chartGroup.selectAll(".heroText")
         .data(superheroStats)
         .enter()
-        .append("herotext")
-        .classed("herotext", true)
+        .append("text")
+        .classed("heroText", true)
         .attr("x", d => xLinearScale(d[chosenXAxis]))
         .attr("y", d => yLinearScale(d[chosenYAxis]))
         .attr("dy", 4)
         .attr("font-size", "10px")
         .text(function (d) {
-            return d.Name
+            return d.Name.slice(0,1)
         });
 
     // Create group for three x-axis labels
@@ -292,7 +306,7 @@ d3.json(powerstats).then(function(data){
                 circlesGroup = renderCircles(circlesGroup, xLinearScale, chosenXAxis, yLinearScale, chosenYAxis);
 
                 // updates text with new x values
-                textGroup = renderText(textGroup, xLinearScale, chosenXAxis, yLinearScale, chosenYAxis);
+                textGroup = renderName(textGroup, xLinearScale, chosenXAxis, yLinearScale, chosenYAxis);
 
 
                 // updates tooltips with new info
@@ -358,7 +372,7 @@ d3.json(powerstats).then(function(data){
                 circlesGroup = renderCircles(circlesGroup, xLinearScale, chosenXAxis, yLinearScale, chosenYAxis);
 
                 // updates text with new x values
-                textGroup = renderText(textGroup, xLinearScale, chosenXAxis, yLinearScale, chosenYAxis);
+                textGroup = renderName(textGroup, xLinearScale, chosenXAxis, yLinearScale, chosenYAxis);
 
 
                 // updates tooltips with new info
