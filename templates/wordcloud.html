@@ -21,11 +21,12 @@
 
 <body>
   <header class="">
-      <nav class="sidebar">
+    <nav class="sidebar">
       <div class="navbar-collapse" id="navbar-collapse">
         <div class="site-header hidden-xs">
           <a class="site-brand" href="/" title="">
-            <img class="img-responsive site-logo" alt="" src="{{ url_for('static', filename='assets/images/icon.png') }}" width="100px" height="400px">
+            <img class="img-responsive site-logo" alt=""
+              src="{{ url_for('static', filename='assets/images/icon.png') }}" width="100px" height="400px">
             SUPERHERO NETWORK
           </a>
         </div>
@@ -33,7 +34,7 @@
           <li><a href="/" title="Home">Home</a></li>
           <li><a href="/profile" title="Superheroes Profile">Superheroes</a></li>
           <li><a href="/charts" title="Analytics">Analytics</a></li>
-          
+
         </ul>
 
         <!-- CREDIT DON'T REMOVE -->
@@ -57,14 +58,15 @@
       </div>
     </nav>
   </header>
-  
+
   <main class="" id="main-collapse">
     <div class="row">
       <div class="col-xs-12 col-md-8">
 
         <div class="section-container-spacer">
           <h2>The Superheroes Who Can Save the Earth</h2>
-          <div id="wordcloud">
+          <div id="wordcloud" class="chart--container">
+            <!-- <a href="https://www.zingchart.com/" rel="noopener" class="zc-ref">Powered by ZingChart</a> -->
             <svg>
               <!-- insert d3 chart here -->
             </svg>
@@ -75,11 +77,11 @@
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
             consequat.</p>
         </div>
-    
-    </div>
+        <a href="https://www.zingchart.com/" rel="noopener" class="zc-ref">Powered by ZingChart</a>
+      </div>
 
 
-    <!-- <script>
+      <!-- <script>
       document.addEventListener("DOMContentLoaded", function (event) {
         masonryBuild();
       });
@@ -120,6 +122,9 @@
     crossorigin="anonymous"></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+
+  <!-- Added ZingChart -->
+  <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
 
   <!-- Prebuilt script element -->
   <script type="text/javascript" src="{{ url_for('static', filename='js/main.85741bff.js') }}"></script>
