@@ -26,7 +26,7 @@
 /* font size dependent on radius, see app.js */
 .heroText {
   font-family: sans-serif;
-  fill: #fff;
+  fill: #000;
   text-anchor: middle;
 }
 
@@ -36,12 +36,12 @@
 }
 
 .heroCirclegood {
-  fill: #89bdd3;
+  fill: #0b1bf3;
   stroke: #e3e3e3;
 }
 
 .heroCirclebad {
-  fill: #d38989;
+  fill: #059e2c;
   stroke: #e3e3e3;
 }
 
