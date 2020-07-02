@@ -11,3 +11,7 @@
     height:100%;
 
 }
+/* wordcloud remove if it doesn't work */
+.x.axis path {
+    display: none;
+  }
