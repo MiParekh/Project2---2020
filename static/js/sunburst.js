@@ -1,9 +1,76 @@
 //Link from Flask to JS file  
 var characters = "/characters";
 
+function parseheroes(arr){
+  var goodpub = {}
+  arr.map(obj => {
+    var pub = obj.Publisher
+    var newobj = {name:obj.Name,value:1}
+    if (goodpub[pub]){
+      goodpub[pub].push(newobj)
+    } else {
+      goodpub[pub]=[newobj]
+    }
+  });
+  var publist = []
+  for(var key in goodpub){
+    var newobj={
+      name:key,
+      children:goodpub[key]
+    }
+    publist.push(newobj)
+  }
+  return publist
+}
+
+function alignmentsort(arr){
+  var alignments = ["good","bad","neutral","unknown"]
+  var sorteddata = []
+  alignments.map(item=>{
+    var sorted = arr.filter(obj => obj.Alignment == item)
+  var newobj = {
+    name:item,
+    children:parseheroes(sorted)
+  }
+  sorteddata.push(newobj)
+  // newobj.children = parseheroes(newobj.children)
+  })
+  return sorteddata
+}
+
 d3.json(characters).then(function (data) {
-  console.log(data);
-});
+  var newdata = alignmentsort(data)
+  console.log(newdata);
+
+  // var good = data.filter(obj => obj.Alignment == "good");
+  // var goodpub = {}
+  // good.map(obj => {
+  //   var pub = obj.Publisher
+  //   var newobj = {name:obj.Name,value:1}
+  //   if (goodpub[pub]){
+  //     goodpub[pub].push(newobj)
+  //   } else {
+  //     goodpub[pub]=[newobj]
+  //   }
+  // });
+  // var publist = []
+  // for(var key in goodpub){
+  //   var newobj={
+  //     name:key,
+  //     children:goodpub[key]
+  //   }
+  //   publist.push(newobj)
+  // }
+
+
+  // console.log(publist);
+  // var bad = data.filter(obj => obj.Alignment == "bad");
+  // var neutral = data.filter(obj => obj.Alignment == "neutral");
+  // var unknown= data.filter(obj => obj.Alignment == "unknown");
+  // console.log(bad);
+  // console.log(neutral);
+  // console.log(unknown);
+
 
 // @TODO: YOUR CODE HERE!
 var svgWidth = 2000;
@@ -39,72 +106,74 @@ var chartGroup = svg.append("g")
 var chart = am4core.create("sunburst", am4plugins_sunburst.Sunburst);
 
 // Add multi-level data
-chart.data = [{
-  name: "First",
-  children: [
-    { name: "A1", value: 100 },
-    { name: "A2", value: 60 }
-  ]
-},
-{
-  name: "Second",
-  children: [
-    { name: "B1", value: 135 },
-    { name: "B2", value: 98 }
-  ]
-},
-{
-  name: "Third",
-  children: [
-    {
-      name: "C1",
-      children: [
-        { name: "EE1", value: 130 },
-        { name: "EE2", value: 87 },
-        { name: "EE3", value: 55 }
-      ]
-    },
-    { name: "C2", value: 148 },
-    {
-      name: "C3", children: [
-        { name: "CC1", value: 53 },
-        { name: "CC2", value: 30 }
-      ]
-    },
-    { name: "C4", value: 26 }
-  ]
-},
-{
-  name: "Fourth",
-  children: [
-    { name: "D1", value: 415 },
-    { name: "D2", value: 148 },
-    { name: "D3", value: 89 }
-  ]
-},
-{
-  name: "Fifth",
-  children: [
-    {
-      name: "E1",
-      children: [
-        { name: "EE1", value: 33 },
-        { name: "EE2", value: 40 },
-        { name: "EE3", value: 89 }
-      ]
-    },
-    {
-      name: "E2",
-      value: 148
-    }
-  ]
-}];
+chart.data = newdata
+// chart.data = [{
+//   name: "First",
+//   children: [
+//     { name: "A1", value: 100 },
+//     { name: "A2", value: 60 }
+//   ]
+// },
+// {
+//   name: "Second",
+//   children: [
+//     { name: "B1", value: 135 },
+//     { name: "B2", value: 98 }
+//   ]
+// },
+// {
+//   name: "Third",
+//   children: [
+//     {
+//       name: "C1",
+//       children: [
+//         { name: "EE1", value: 130 },
+//         { name: "EE2", value: 87 },
+//         { name: "EE3", value: 55 }
+//       ]
+//     },
+//     { name: "C2", value: 148 },
+//     {
+//       name: "C3", children: [
+//         { name: "CC1", value: 53 },
+//         { name: "CC2", value: 30 }
+//       ]
+//     },
+//     { name: "C4", value: 26 }
+//   ]
+// },
+// {
+//   name: "Fourth",
+//   children: [
+//     { name: "D1", value: 415 },
+//     { name: "D2", value: 148 },
+//     { name: "D3", value: 89 }
+//   ]
+// },
+// {
+//   name: "Fifth",
+//   children: [
+//     {
+//       name: "E1",
+//       children: [
+//         { name: "EE1", value: 33 },
+//         { name: "EE2", value: 40 },
+//         { name: "EE3", value: 89 }
+//       ]
+//     },
+//     {
+//       name: "E2",
+//       value: 148
+//     }
+//   ]
+// }];
 
 // Define data fields
 chart.dataFields.value = "value";
 chart.dataFields.name = "name";
 chart.dataFields.children = "children";
 
+});
 // var level0 = chart.seriesTemplates.create("0");
 
 // chart.colors.step = 2;
