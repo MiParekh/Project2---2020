@@ -1,113 +1,133 @@
-// Import react-vis
-import { Sunburst } from 'react-vis';
+//Link from Flask to JS file  
+var characters = "/characters";
 
-import {Hint, Sunburst} from 'index';
+d3.json(characters).then(function (data) {
+  console.log(data);
+});
 
-import {EXTENDED_DISCRETE_COLOR_RANGE as COLORS} from 'theme';
+// @TODO: YOUR CODE HERE!
+var svgWidth = 2000;
+var svgHeight = 2000;
 
-//Link from Flask to JS file
-var characters = "/characters"
-
-d3.json(characters, function (data) {
-    console.log(data)
-
-})
-
-    //Add the following code to your render function:
-    //< Sunburst
-hideRootNode
-colorType = "literal"
-data = {data}
-height = {300}
-width = {350};
-
-//>
-
-  //Like other systems that make use of d3's hierarchy layout system 
-  //we ask that our data be presented to us in a tree like structure.
-
-  const myData = {
-    "title": "analytics",
-    "color": "#12939A",
-    "children": [
-        {
-            "title": "cluster",
-            "children": [
-                { "title": "AgglomerativeCluster", "color": "#12939A", "size": 3938 },
-                { "title": "CommunityStructure", "color": "#12939A", "size": 3812 },
-                { "title": "HierarchicalCluster", "color": "#12939A", "size": 6714 },
-                { "title": "MergeEdge", "color": "#12939A", "size": 743 }
-            ]
-        },
-        {
-            "title": "graph",
-            "children": [
-                { "title": "BetweennessCentrality", "color": "#12939A", "size": 3534 },
-                { "title": "LinkDistance", "color": "#12939A", "size": 5731 },
-                { "title": "MaxFlowMinCut", "color": "#12939A", "size": 7840 },
-                { "title": "ShortestPaths", "color": "#12939A", "size": 5914 },
-                { "title": "SpanningTree", "color": "#12939A", "size": 3416 }
-            ]
-        },
-        {
-            "title": "optimization",
-            "children": [
-                { "title": "AspectRatioBanker", "color": "#12939A", "size": 7074 }
-            ]
-        }
-    ]
+var margin = {
+  top: 20,
+  right: 40,
+  bottom: 150,
+  left: 100
 };
 
-//Adding annotations
-const tipStyle = {
-    display: 'flex',
-    color: '#fff',
-    background: '#000',
-    alignItems: 'center',
-    padding: '5px'
-  };
-  const boxStyle = {height: '10px', width: '10px'};
-  
-  function buildValue(hoveredCell) {
-    const {radius, angle, angle0} = hoveredCell;
-    const truedAngle = (angle + angle0) / 2;
-    return {
-      x: radius * Math.cos(truedAngle),
-      y: radius * Math.sin(truedAngle)
-    };
-  }
-  
-  export default class SunburstWithTooltips extends React.Component {
-    state = {
-      hoveredCell: false
-    };
-    render() {
-      const {hoveredCell} = this.state;
-      return (
-        <Sunburst
-          data={DATA}
-          style={{stroke: '#fff'}}
-          onValueMouseOver={v =>
-            this.setState({hoveredCell: v.x && v.y ? v : false})
-          }
-          onValueMouseOut={v => this.setState({hoveredCell: false})}
-          height={300}
-          margin={{top: 50, bottom: 50, left: 50, right: 50}}
-          getLabel={d => d.name}
-          getSize={d => d.bigness}
-          getColor={d => d.clr}
-          width={350}
-          padAngle={() => 0.02}
-        >
-          {hoveredCell ? (
-            <Hint value={buildValue(hoveredCell)}>
-              <div style={tipStyle}>
-                <div style={{...boxStyle, background: hoveredCell.clr}} />
-                {hoveredCell.clr}
-              </div>
-            </Hint>
-          ) : null}
-        </Sunburst>
-      );
+var width = svgWidth - margin.left - margin.right;
+var height = svgHeight - margin.top - margin.bottom;
+
+// Create an SVG wrapper, append an SVG group that will hold our chart,
+// and shift the latter by left and top margins.
+var svg = d3
+  .select(".sunburst")
+  .append("svg")
+  .attr("width", svgWidth)
+  .attr("height", svgHeight);
+
+// Append an SVG group
+var chartGroup = svg.append("g")
+  .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+// characters.value = "Alignment";
+// characters.name = "Publisher";
+// characters.children = "Name";
+
+// Create the chart
+var chart = am4core.create("sunburst", am4plugins_sunburst.Sunburst);
+
+// Add multi-level data
+chart.data = [{
+  name: "First",
+  children: [
+    { name: "A1", value: 100 },
+    { name: "A2", value: 60 }
+  ]
+},
+{
+  name: "Second",
+  children: [
+    { name: "B1", value: 135 },
+    { name: "B2", value: 98 }
+  ]
+},
+{
+  name: "Third",
+  children: [
+    {
+      name: "C1",
+      children: [
+        { name: "EE1", value: 130 },
+        { name: "EE2", value: 87 },
+        { name: "EE3", value: 55 }
+      ]
+    },
+    { name: "C2", value: 148 },
+    {
+      name: "C3", children: [
+        { name: "CC1", value: 53 },
+        { name: "CC2", value: 30 }
+      ]
+    },
+    { name: "C4", value: 26 }
+  ]
+},
+{
+  name: "Fourth",
+  children: [
+    { name: "D1", value: 415 },
+    { name: "D2", value: 148 },
+    { name: "D3", value: 89 }
+  ]
+},
+{
+  name: "Fifth",
+  children: [
+    {
+      name: "E1",
+      children: [
+        { name: "EE1", value: 33 },
+        { name: "EE2", value: 40 },
+        { name: "EE3", value: 89 }
+      ]
+    },
+    {
+      name: "E2",
+      value: 148
     }
-  }
+  ]
+}];
+
+// Define data fields
+chart.dataFields.value = "value";
+chart.dataFields.name = "name";
+chart.dataFields.children = "children";
+
+// var level0 = chart.seriesTemplates.create("0");
+
+// chart.colors.step = 2;
+
+// chart.dataFields.color = "color";
+
+// var level1 = chart.seriesTemplates.create("1");
+// level1.slices.template.fillOpacity = 0.75;
+
+// var level2 = chart.seriesTemplates.create("2");
+// level2.slices.template.fillOpacity = 0.5;
+
+// level1.labels.template.inside = false;
+// level1.labels.template.fill = am4core.color("#000");
+
+// chart.radius = am4core.percent(10);
+
+// chart.legend = new am4charts.Legend();
+
+// var level1 = chart.seriesTemplates.create("1");
+// level1.slices.template.fillOpacity = 0.75;
+// level1.hiddenInLegend = true;
+
+// var level2 = chart.seriesTemplates.create("2");
+// level2.slices.template.fillOpacity = 0.5;
+// level2.hiddenInLegend = true;
