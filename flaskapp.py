@@ -47,13 +47,6 @@ def home():
 def profile():
     return render_template("profile.html")
 
-@app.route("/feat_character")
-def feat_character(chosenCharacter):
-    character = None
-    if character in bio_list:
-        character = bio_list["name"]
-    return render_template("feat_character.html", chosenCharacter=chosenCharacter, character=character)
-
 @app.route("/charts")
 def charts():
     return render_template("charts.html")
@@ -95,10 +88,11 @@ def characters():
     conn.close()
 
     char_list = []
-    for ID, name, alignment, gender, eyecolor, race, haircolor, publisher, skincolor, height, weight in data:
+    for name, total, ID, alignment, gender, eyecolor, race, haircolor, publisher, skincolor, height, weight in data:
         char_dict = {}
-        char_dict["ID"] = ID
         char_dict["Name"] = name
+        char_dict["Total"] = total
+        char_dict["ID"] = ID
         char_dict["Alignment"] = alignment
         char_dict["Gender"] = gender
         char_dict["Eyecolor"] = eyecolor
