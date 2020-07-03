@@ -1,6 +1,6 @@
 /* Tamala */
 #mainphoto {
-    width: 40%;
+    width: 100%;
     height:100%;
 
 }
@@ -8,11 +8,10 @@
 
 #chartphoto{
     width: 100%;
-    height:100%;
-
+    height:100%
 }
 
-.container{
-    grid-template-columns: 100px 100px;
-    grid-row: ;
+.grid-item{
+    width: 100%;
+    height:100%
 }
