@@ -3,8 +3,8 @@
 var powerstats = "/powerstats"
 
 // @TODO: YOUR CODE HERE!
-var svgWidth = 2000;
-var svgHeight = 2000;
+var svgWidth = 1500;
+var svgHeight = 1500;
 
 var margin = {
     top: 20,
