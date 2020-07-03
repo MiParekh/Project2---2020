@@ -6,12 +6,12 @@
 }
 
 
-#chartphoto{
-    width: 100%;
-    height:100%
+.grid-item .chartphoto{
+    width: 400px;
+    height:200px;
 }
 
 .grid-item{
-    width: 100%;
-    height:100%
+    width: 400px;
+    height:auto
 }
