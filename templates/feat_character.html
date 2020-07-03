@@ -59,7 +59,23 @@
     </nav>
   </header>
 
-  <!-- insert code here -->
+  <main>
+    <div class="container text-center"> 
+        <a href="/feat_character"></a>
+        {% if character %}   
+        <h1>{{ bio_list["name"] }}</h1>
+        <br>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            masonryBuild();
+        });
+        </script>
+
+
+  </main>
 
 
 
@@ -68,20 +84,17 @@
 
 
 
-  <script>
+
+
+
+
+
+    <script>
     document.addEventListener("DOMContentLoaded", function (event) {
-      masonryBuild();
+        navbarToggleSidebar();
+        navActivePage();
     });
-  </script>
-
-</main>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function (event) {
-    navbarToggleSidebar();
-    navActivePage();
-  });
-</script>
+    </script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
 
