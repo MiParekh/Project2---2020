@@ -3,14 +3,14 @@
 var powerstats = "/powerstats"
 
 // @TODO: YOUR CODE HERE!
-var svgWidth = 1500;
-var svgHeight = 1500;
+var svgWidth = 1200;
+var svgHeight = 500;
 
 var margin = {
     top: 20,
     right: 40,
-    bottom: 150,
-    left: 100
+    bottom: 100,
+    left: 80
 };
 
 var width = svgWidth - margin.left - margin.right;
@@ -197,7 +197,7 @@ d3.json(powerstats).then(function(superheroStats){
         .append("circle")
         .attr("cx", d => xLinearScale(d[chosenXAxis]))
         .attr("cy", d => yLinearScale(d[chosenYAxis]))
-        .attr("r", 20)
+        .attr("r", 10)
         .attr("opacity", ".5")
         .attr("class", function(d) {
         if (d.Alignment === "good") {
