@@ -48,8 +48,11 @@ def profile():
     return render_template("profile.html")
 
 @app.route("/feat_character")
-def feat_character():
-    return render_template("feat_character.html")
+def feat_character(chosenCharacter):
+    character = None
+    if character in bio_list:
+        character = bio_list["name"]
+    return render_template("feat_character.html", chosenCharacter=chosenCharacter, character=character)
 
 @app.route("/charts")
 def charts():
@@ -187,7 +190,6 @@ def chosenCharacter(chosenCharacter):
     query = f"""SELECT * FROM bio
                 WHERE name ='{chosenCharacter.title()}'"""
     data = c.execute(query).fetchall()
-    print(data)
     conn.commit()
     conn.close()
 
