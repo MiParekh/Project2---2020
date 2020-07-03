@@ -47,6 +47,10 @@ def home():
 def profile():
     return render_template("profile.html")
 
+@app.route("/feat_character")
+def feat_character():
+    return render_template("feat_character.html")
+
 @app.route("/charts")
 def charts():
     return render_template("charts.html")
