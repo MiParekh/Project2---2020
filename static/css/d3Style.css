@@ -1,3 +1,19 @@
+.bar::before {
+  position: absolute;
+  top: 50px;
+  left: 300px;
+  z-index: -1;
+  display: block;
+  width: 400px;
+  height: 300px;
+  content: " ";
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/1/1a/Captain_America_Shield.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  opacity: 0.3;
+}
+
 .aText {
   font-family: sans-serif;
   font-size: 16px;
@@ -41,7 +57,17 @@
 }
 
 .heroCirclebad {
-  fill: #059e2c;
+  fill: #dd0000;
+  stroke: #e3e3e3;
+}
+
+.heroBargood {
+  fill: #0919ff;
+  stroke: #e3e3e3;
+}
+
+.heroBarbad {
+  fill: #dd0000;
   stroke: #e3e3e3;
 }
 
