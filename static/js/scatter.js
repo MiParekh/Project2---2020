@@ -203,8 +203,12 @@ d3.json(powerstats).then(function(superheroStats){
         if (d.Alignment === "good") {
             return "heroCirclegood";
         }
-        else {
+
+        else if (d.Alignment === "bad") {
             return "heroCirclebad";
+        }
+        else {
+            return "heroCircleneutral";
         }  
 
         });
