@@ -13,3 +13,7 @@
 select {
     width: 200;
 }
+
+.center-choice {
+    text-align: center;
+}
