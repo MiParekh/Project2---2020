@@ -41,6 +41,7 @@ function alignmentsort(arr){
 d3.json(characters).then(function (data) {
   var newdata = alignmentsort(data)
   console.log(newdata);
+  console.log(data);
 
   // var good = data.filter(obj => obj.Alignment == "good");
   // var goodpub = {}
@@ -173,25 +174,25 @@ chart.dataFields.value = "value";
 chart.dataFields.name = "name";
 chart.dataFields.children = "children";
 
-});
-// var level0 = chart.seriesTemplates.create("0");
+var level0 = chart.seriesTemplates.create("0");
 
-// chart.colors.step = 2;
+chart.colors.step = 8;
 
-// chart.dataFields.color = "color";
+chart.dataFields.color = "color";
 
-// var level1 = chart.seriesTemplates.create("1");
-// level1.slices.template.fillOpacity = 0.75;
+var level1 = chart.seriesTemplates.create("1");
+level1.slices.template.fillOpacity = 0.8;
 
-// var level2 = chart.seriesTemplates.create("2");
-// level2.slices.template.fillOpacity = 0.5;
+var level2 = chart.seriesTemplates.create("2");
+level2.slices.template.fillOpacity = 0.6;
 
 // level1.labels.template.inside = false;
-// level1.labels.template.fill = am4core.color("#000");
+level1.labels.template.fill = am4core.color("brown");
+level2.labels.template.fill = am4core.color("#000");
 
 // chart.radius = am4core.percent(10);
 
-// chart.legend = new am4charts.Legend();
+chart.legend = new am4charts.Legend();
 
 // var level1 = chart.seriesTemplates.create("1");
 // level1.slices.template.fillOpacity = 0.75;
@@ -199,4 +200,11 @@ chart.dataFields.children = "children";
 
 // var level2 = chart.seriesTemplates.create("2");
 // level2.slices.template.fillOpacity = 0.5;
-// level2.hiddenInLegend = true;
+// level1.hiddenInLegend = true;
+level2.hiddenInLegend = true;
+
+level2.labels.template.text = "{category}"; 
+level0.labels.template.text = "{category}: {value.value}"; 
+level1.labels.template.text = "{category}: {value.value}"; 
+
+});
