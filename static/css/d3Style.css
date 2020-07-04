@@ -61,6 +61,11 @@
   stroke: #e3e3e3;
 }
 
+.heroCircleneutral {
+  fill: #bac703;
+  stroke: #e3e3e3;
+}
+
 .heroBargood {
   fill: #0919ff;
   stroke: #e3e3e3;
@@ -68,6 +73,11 @@
 
 .heroBarbad {
   fill: #dd0000;
+  stroke: #e3e3e3;
+}
+
+.heroBarneutral {
+  fill: #bac703;
   stroke: #e3e3e3;
 }
 

@@ -65,17 +65,10 @@
       <div id="scatter">
         <!-- scatter chart here -->
       </div>
+      <h6>(Those aligned with Good are colored in blue, Bad are colored in red, all others are yellow)</h6>
+      <hr>
       <h4>Analysis</h4>
-      <p>Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's
-        Analysis.
-        Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's
-        Analysis.Insert Mitesh's Analysis.
-        Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's Analysis.
-        Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's
-        Analysis.
-        Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's
-        Analysis.
-      </p>
+
       <div class="row">
         <div class="col-xs-12 col-md-8">
           <img src="{{ url_for('static', filename='assets/images/corr_matrix.png') }}" alt="correlation matrix"
@@ -86,15 +79,17 @@
         <br>
         <br>
         <div class="col-xs-12 col-md-4">
-          <p>Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert
-            Mitesh's Analysis.
-            Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert
-            Mitesh's Analysis.Insert Mitesh's Analysis.
-            Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's Analysis.
-            Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert
-            Mitesh's Analysis.
-            Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert Mitesh's Analysis.Insert
-            Mitesh's Analysis.
+          <h6>Scatterplot Analysis</h6>
+          <p> Generally speaking, there are moderate to strong correlations between all general attributes, 
+            as these are superheroes and villains with extraordinary abilties compared to the general population. 
+            The three highest correlations were: Strength/Durability (.79), Combat/Intelligence (.78), and Power/Durability (.75). Conversely, the 
+             weakest correlations are Strength/Intelligence (.57), Strength/Combat (.58), and Speed/Combat (.59).
+          </p>
+          <hr>
+          <p> While a scatterplot is helpful to see the correlations between general attributes and scores for high level assessment,
+            a deeper dive into individual superpowers is needed to thoroughly understand which heroes (and potentially villains) can 
+            help the most. For example, are there any superpowers that lead to a strong combination of durability and 
+            strength which can help with a real world issue such as COVID-19.
           </p>
         </div>
       </div>

@@ -4,9 +4,9 @@ var powerstats = "/powerstats"
 
 //Create an SVG wrapper, append an SVG group that will hold our chart, and hold margins
 var margin = { top: 10, right: 10, bottom: 10, left: 10 },
-    width = 1500 - margin.left - margin.right,
-    height = 1500 - margin.top - margin.bottom,
-    innerRadius = 200,
+    width = 1000 - margin.left - margin.right,
+    height = 1000 - margin.top - margin.bottom,
+    innerRadius = 100,
     outerRadius = Math.min(width, height) / 2;
 
 var svg = d3.select("#bar")
@@ -111,10 +111,13 @@ d3.json(powerstats).then(function (superheroStats) {
         if (d.Alignment === "good") {
             return "heroBargood";
         }
-        else {
+
+        else if (d.Alignment === "bad") {
             return "heroBarbad";
         }
-
+        else {
+            return "heroBarneutral";
+        }
     })
     .attr("d", d3.arc()
         .innerRadius(innerRadius)
@@ -151,7 +154,7 @@ d3.json(powerstats).then(function (superheroStats) {
         .enter()
         .append("g")
         .attr("text-anchor", function (d) { return (x(d.Name) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ? "end" : "start"; })
-        .attr("transform", function (d) { return "rotate(" + ((x(d.Name) + x.bandwidth() / 2) * 180 / Math.PI - 90) + ")" + "translate(" + (y(d.Total) + 100) + ",0)"; })
+        .attr("transform", function (d) { return "rotate(" + ((x(d.Name) + x.bandwidth() / 2) * 180 / Math.PI - 90) + ")" + "translate(" + (y(d.Total) + 70) + ",0)"; })
         .append("text")
         .attr("fill", "white")
         .text(function (d) { return (d.Name) })
