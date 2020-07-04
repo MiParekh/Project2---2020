@@ -14,7 +14,7 @@
   <link href="{{ url_for('static', filename='assets/apple-icon-180x180.png') }}" rel="apple-touch-icon">
   <link href="../assets/favicon.ico" rel="icon">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
-  <title>Word Cloud| The Superhero Network</title>
+  <title>Table Filter| The Superhero Network</title>
   <link href="{{ url_for('static', filename='css/main.82cfd66e.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
@@ -66,54 +66,97 @@
 
         <div class="section-container-spacer">
           <h2>The Superheroes Who Can Save the Earth</h2>
+          <br>
           <h4>Analysis</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.</p>
+          <p>We identified 167 super abilities that exist among beings across the universe that can potentially assist
+            with one or more current critical world issues which are (Medical (COVID - 19), Climate Change, Drug
+            Addiction, Educational Improvements, Infrastructure Improvements, Large Scale Conflict).
+            <br>
+            We researched each power and identified an issue that it can potentially assist with. This interactive table
+            below allows you to filter by superhero, critical world issue, or both to see who can potentially help save
+            the
+            day! Amongst the beings, the range of abilities in an individual went from 1 to 49 (with Spectre at the
+            top). 21 of the
+            beings had one or more identified ability in all 6 identified world issues.
+            <br>
+          </p>
+
+          After thorough analysis, we determined the following:
+          <ul>
+            <li>531 beings can potentially assist with Medical (COVID-19) issues, with abilities such as Aurora's
+              MolecularManipulation (potentially assist with creating a cure), Deadpool's Regeneration (to potentially
+              help with
+              massproduction), and Hulk'sToxin and Disease Control/Resistance.</li>
+            <li>492 with Infrastructure improvements, with abilities such as Ardina's Energy Manipulation (to help
+              process materials more efficiently for faster results), Thor's Weather Control (to temporarily halt
+              short-term bad weather to
+              allow for progress), and Doctor Strange's Flight (to potentially help move items to elevated locations
+              more
+              efficiently).</li>
+            <li>432 with Large Scale Conflict, with abilities such as Camoflague, Danger Sense, and Weapons Master.
+              These skills and more can be
+              can be found in hero coalitions like the Avengers and the Justice League.</li>
+            <li>244 with Education Improvements, with abilities such as Maxima's Mind Blast (can we "place" information
+              determined to be universally helpful and critical into peoples minds who want to learn more),
+              Power Girl's Enhanced Memory (to potentially help with retaining complex large scale information for like
+              doctoral professions)
+              and Brainiac's Omnilingualism (can assist with language deciphering amongs humans
+              and animals).</li>
+            <li>148 with Climate Change, with abilities such as Zatanna's Terrakinesis (potentially manipulate items
+              from theearth) and Captian Atom's Radiation Control (is there any technology we can develop learning from
+              these
+              abilities).</li>
+            <li>121 with Drug Addiction, with abilities such as Scarlet Witch's Illiusions (to help show that addiction
+              may cause to
+              someone in the future) and Spider-Woman IV's Psionic powers (to potentially help people control addiction
+              that want to be
+              helped).</li>
+          </ul>
+
+          <!-- Includes input, select dropdown, & search button -->
           <div class="container">
-            <div class="row">
-              <!-- <div class="margin-top-10"> -->
-              <div class="col-md-5">
-                <div class="grid-item chartphoto">
-                  <aside class="filters">
-                    <!-- <div class="panel panel-default"> -->
-                    <div class="panel-heading"><h2>Filter Search Hero</h2></div>
-                    <div class="panel-body">
-                      <form>
+            
+            <!-- Search header -->
+            <div class="row align-items-center">
+              <div class="col-md-12">
+                <h2 class="center-choice">Use the filters below to search the hero and/or hero of your choice!</h2>
+              </div>
+            </div>
+
+            <form>
+              <div class="form-row align-items-center">
+                <!-- Input Hero -->
+                <div class="col-md-4 my-1">
+                  <div class="grid-item chartphoto">
+                    <aside class="filters">
+                      <div class="panel-heading">
+                        <h2>Search Hero</h2>
+                      </div>
+                      <div class="panel-body">
                         <div class="form-group">
                           <ul class="list-group" id="filters">
                             <li class="filter list-group-item">
-                              <!-- <label for="date">
-                                <h2>Find Hero</h2>
-                              </label> -->
                               <input class="form-control" id="hero" type="text" placeholder="Superman">
                             </li>
                           </ul>
                         </div>
-                      </form>
-                    </div>
-                    <!-- </div> -->
-                  </aside>
+                      </div>
+                    </aside>
+                  </div>
                 </div>
-              </div>
-              <!-- </div>
-          </div> -->
 
-              <!-- <div class="margin-top-10"> -->
-              <div class="col-md-5">
-                <div class="grid-item chartphoto">
-                  <aside class="filters">
-                    <!-- <div class="panel panel-default"> -->
-                    <div class="panel-heading"><h2>Filter Search Issue</h2></div>
-                    <div class="panel-body">
-                      <!-- <form> -->
+
+                <!-- Dropdown Menu -->
+                <div class="col-md-4 my-1">
+                  <div class="grid-item chartphoto">
+                    <aside class="filters">
+                      <div class="panel-heading">
+                        <h2>Search Issue</h2>
+                      </div>
+                      <div class="panel-body">
                         <div class="form-group">
                           <ul class="list-group" id="filters">
                             <li class="filter list-group-item">
-                              <!-- <label for="issue">
-                                <h2>Find Issue</h2>
-                              </label> -->
                               <select id="resolution">
                                 <option value=""></option>
                                 <option value="Medical (COVID-19)">Medical (COVID-19)</option>
@@ -127,37 +170,38 @@
                             </li>
                           </ul>
                         </div>
-                      <!-- </form> -->
-                    </div>
-                    <!-- </div> -->
-                  </aside>
+                      </div>
+                    </aside>
+                  </div>
+                </div>
+                <div class="col-md-4 my1">
+                  <button id="filter-btn" type="button" class="btn btn-primary">Search</button>
                 </div>
               </div>
-              <div class="col-md-2">
-                <button id="filter-btn" type="button" class="btn btn-default">Filter Hero</button>
-              </div>
-
-            </div>
+            </form>
           </div>
         </div>
       </div>
 
-      <!-- <table class="table table-striped mt32 customers-list"> -->
+      <!-- Table Area-->
       <div id="table-area" class="chart--container">
         <div class="column middle col-md-10">
           <table id="hero-table" class="table table-striped">
             <thead>
               <tr>
-                <th class="table-head">Issue</th>
-                <th class="table-head">Superhero</th>
-                <th class="table-head">Superpower</th>
+                <th class="table-head">
+                  <h2>Issue</h2>
+                </th>
+                <th class="table-head">
+                  <h2>Superhero</h2>
+                </th>
+                <th class="table-head">
+                  <h2>Superpower</h2>
+                </th>
               </tr>
             </thead>
             <tbody></tbody>
           </table>
-
-
-
         </div>
       </div>
 
@@ -205,11 +249,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
 
 
+  <!-- Connect to tableFilter.js -->
+  <script type="text/javascript" src="{{ url_for('static', filename='js/tableFilter.js') }}"></script>
+
   <!-- Prebuilt script element -->
   <script type="text/javascript" src="{{ url_for('static', filename='js/main.85741bff.js') }}"></script>
-  <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/table.js') }}"></script> -->
-  <script type="text/javascript" src="{{ url_for('static', filename='js/table2.js') }}"></script>
-
 
 
 </body>

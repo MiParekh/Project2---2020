@@ -63,9 +63,9 @@ def scatter():
 def sunburst():
     return render_template("sunburst.html")
 
-@app.route("/wordcloud")
+@app.route("/tableFilter")
 def wordcloud():
-    return render_template("wordcloud.html")
+    return render_template("tableFilter.html")
 
 
 
