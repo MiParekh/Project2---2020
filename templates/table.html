@@ -13,7 +13,6 @@
   <meta name="msapplication-tap-highlight" content="no">
   <link href="{{ url_for('static', filename='assets/apple-icon-180x180.png') }}" rel="apple-touch-icon">
   <link href="../assets/favicon.ico" rel="icon">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
   <title>Word Cloud| The Superhero Network</title>
   <link href="{{ url_for('static', filename='css/main.82cfd66e.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -66,98 +65,17 @@
 
         <div class="section-container-spacer">
           <h2>The Superheroes Who Can Save the Earth</h2>
-          <h4>Analysis</h4>
+          <div id="hero-table" class="chart--container">
+            
+           
+              <!-- insert d3 table here -->
+           
+          </div>
+          <h6>Analysis</h6>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
             consequat.</p>
-          <div class="container">
-            <div class="row">
-              <!-- <div class="margin-top-10"> -->
-              <div class="col-md-5">
-                <div class="grid-item chartphoto">
-                  <aside class="filters">
-                    <!-- <div class="panel panel-default"> -->
-                    <div class="panel-heading"><h2>Filter Search Hero</h2></div>
-                    <div class="panel-body">
-                      <form>
-                        <div class="form-group">
-                          <ul class="list-group" id="filters">
-                            <li class="filter list-group-item">
-                              <!-- <label for="date">
-                                <h2>Find Hero</h2>
-                              </label> -->
-                              <input class="form-control" id="hero" type="text" placeholder="Superman">
-                            </li>
-                          </ul>
-                        </div>
-                      </form>
-                    </div>
-                    <!-- </div> -->
-                  </aside>
-                </div>
-              </div>
-              <!-- </div>
-          </div> -->
-
-              <!-- <div class="margin-top-10"> -->
-              <div class="col-md-5">
-                <div class="grid-item chartphoto">
-                  <aside class="filters">
-                    <!-- <div class="panel panel-default"> -->
-                    <div class="panel-heading"><h2>Filter Search Issue</h2></div>
-                    <div class="panel-body">
-                      <!-- <form> -->
-                        <div class="form-group">
-                          <ul class="list-group" id="filters">
-                            <li class="filter list-group-item">
-                              <!-- <label for="issue">
-                                <h2>Find Issue</h2>
-                              </label> -->
-                              <select id="resolution">
-                                <option value=""></option>
-                                <option value="Medical (COVID-19)">Medical (COVID-19)</option>
-                                <option value="Large Scale Conflict">Large Scale Conflict</option>
-                                <option value="Infrastructure Improvements">Infrastructure Improvements</option>
-                                <option value="Miscellaneous">Miscellaneous</option>
-                                <option value="Climate Change">Climate Change</option>
-                                <option value="Education Improvements">Education Improvements</option>
-                                <option value="Drug Addiction">Drug Addiction</option>
-                              </select>
-                            </li>
-                          </ul>
-                        </div>
-                      <!-- </form> -->
-                    </div>
-                    <!-- </div> -->
-                  </aside>
-                </div>
-              </div>
-              <div class="col-md-2">
-                <button id="filter-btn" type="button" class="btn btn-default">Filter Hero</button>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- <table class="table table-striped mt32 customers-list"> -->
-      <div id="table-area" class="chart--container">
-        <div class="column middle col-md-10">
-          <table id="hero-table" class="table table-striped">
-            <thead>
-              <tr>
-                <th class="table-head">Issue</th>
-                <th class="table-head">Superhero</th>
-                <th class="table-head">Superpower</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-
-
-
         </div>
       </div>
 
@@ -207,8 +125,7 @@
 
   <!-- Prebuilt script element -->
   <script type="text/javascript" src="{{ url_for('static', filename='js/main.85741bff.js') }}"></script>
-  <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/table.js') }}"></script> -->
-  <script type="text/javascript" src="{{ url_for('static', filename='js/table2.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/table.js') }}"></script>
 
 
 

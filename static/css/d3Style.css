@@ -98,17 +98,6 @@
   border-radius: 4px;
 }
 
-/* For Wordcloud and/or Multi-Bubble Packs*/
-.chart--container {
-  height: 100%;
-  width: 100%;
-  min-height: 850px;
-}
-
-.zc-ref {
-  display: none;
-}
-
 /* Mobile Rules */
 @media screen and (max-width: 530px) {
   .heroText {
