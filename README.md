@@ -37,33 +37,32 @@ We download the data from Kaggle and scrape data from the SuperHero API and Cle
 
 
 Create FlaskApp:
-![Superhero network](/static/assets/images/Readme03.png)
 Python: flaskapp.py
 Jupyter Notebook: flaskapp.ipynb
 Feature_Character.html
-![Superhero network](/static/assets/images/Readme04.png)
+![Superhero network](/static/assets/images/Readme03.png)
 
 Create Website:
 Index.html
+![Superhero network](/static/assets/images/Readme04.png)
 ![Superhero network](/static/assets/images/Readme05.png)
-![Superhero network](/static/assets/images/Readme06.png)
 
 Sunburst Analysis - Superhero Characteristics:
 Create sunburst chart to find the right superheroes using HTML, Javascript, and Amchart Sunburst.html and Sunburst.js.
-![Superhero network](/static/assets/images/Readme07.png)
+![Superhero network](/static/assets/images/Readme06.png)
 
 To begin our analysis, let’s take a look at the characteristics of our top superheroes. For the top 158 superheroes ranked by total stats, we can review alignment. Good heroes out number bad heroes 94 to 50 with another 10 that are neutral, which puts us in a good position to recruit heroes to our cause. Within the 94 heroes, the publisher is Marvel for 55 heroes and DC for 32 heroes. We can also see that for the non-Marvel and DC heroes, all the top heroes are good which is a positive sign for us. Although Marvel has a higher number of good heroes vs. DC, DC has a slightly higher percentage of good heroes vs. bad heroes. DC is 32 good vs. 17 bad or 65% good. Marvel is 55 good vs. 33 bad or 63% good. On the outer ring of the sunburst, we can see all the top heroes in their respective alignment and publisher camps. Next, we can take a deeper dive into hero power stats as we move through our interactive superhero network analytics dashboard.
 Superpowers:
 Create scatter plot with interactive axis to display relationship of stats for the superheroes. Scatter.js Scatter.html. Include a correlation matrix as well. Correlation_Matrix.ipynb.
+![Superhero network](/static/assets/images/Readme07.png)
 ![Superhero network](/static/assets/images/Readme08.png)
-![Superhero network](/static/assets/images/Readme09.png)
 
 Generally speaking, there are moderate to strong correlations between all general attributes, as these are superheroes and villains with extraordinary abilities compared to the general population. The three highest correlations were: Strength/Durability (.79), Combat/Intelligence (.78), and Power/Durability (.75). Conversely, the weakest correlations are Strength/Intelligence (.57), Strength/Combat (.58), and Speed/Combat (.59).
 While a scatterplot is helpful to see the correlations between general attributes and scores for high level assessment, a deeper dive into individual superpowers is needed to thoroughly understand which heroes (and potentially villains) can help the most. For example, are there any superpowers that lead to a strong combination of durability and strength which can help with a real-world issue such as COVID-19.
 Top 150 Superheroes
 Bar.js 
 Bar.html
-![Superhero network](/static/assets/images/Readme10.png)
+![Superhero network](/static/assets/images/Readme09.png)
 
 -The average total score for the top 150 Superheroes was 434 (median:421), ranging from 356 to 581 (Martian Manhunter).
 -24 superheroes and villains had a total score of 500 or more.
@@ -74,7 +73,7 @@ While a bar chart is helpful to see the which superheroes are the most versatile
 Search Filter for Superhero or Issue
 TableFilter.js 
 TableFilter.html
-![Superhero network](/static/assets/images/Readme11.png)
+![Superhero network](/static/assets/images/Readme10.png)
 
 We identified 167 super abilities that exist among beings across the universe that can potentially assist with one or more current critical world issues which are (Medical (COVID - 19), Climate Change, Drug Addiction, Educational Improvements, Infrastructure Improvements, Large Scale Conflict).
 We researched each power and identified an issue that it can potentially assist with. This interactive table below allows you to filter by superhero, critical world issue, or both to see who can potentially help save the day! Amongst the beings, the range of abilities in an individual went from 1 to 49 (with Spectre at the top). 21 of the beings had one or more identified ability in all 6 identified world issues.
@@ -86,7 +85,7 @@ After thorough analysis, we determined the following:
 148 with Climate Change, with abilities such as Zatanna's Terrakinesis (potentially manipulate items from the earth) and Captain Atom's Radiation Control (is there any technology we can develop learning from these abilities).
 121 with Drug Addiction, with abilities such as Scarlet Witch's Illusions (to help show that addiction may cause to someone in the future) and Spider-Woman IV's Psionic powers (to potentially help people control addiction that want to be helped).
 Conclusion:
-![Superhero network](/static/assets/images/Readme12.png)
+![Superhero network](/static/assets/images/Readme11.png)
 We need to find the superheroes that can solve the world’s most pressing issues. The Superhero Network interactive analytics dashboard gives YOU the ability to research the Superheroes by Characteristics, by Stats, by Powers so that YOU can draw your own insights and conclusions. Who will save the earth? We leave that up to YOU. Good luck and God Speed.
 
-![Superhero network](/static/assets/images/Readme13.png)
+![Superhero network](/static/assets/images/Readme12.png)
