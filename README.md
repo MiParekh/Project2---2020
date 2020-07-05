@@ -30,16 +30,17 @@ After thorough analysis, we determined the following:
 5. 148 with Climate Change
 6. 121 with Drug Addiction
 
-Dependencies
+<H2>Dependencies</H2>
 
 This project requires SuperHero API, Jupyter Notebook, Python, Pandas, SQLite, FlaskApp, JSON, HTML, CSS, Javascript, D3, Amcharts, Heroku.
 
-Questions:
+<H2>Questions:</H2>
+
 1. Which superheroes are aligned towards good and which publishers are they from?
 2. Which superheroes have the most total stats or the highest stats for a combination of stat categories?
 3. Which powers are most relevant for solving the world’s problems and which heroes have those relevant powers?
 
-Extract, Scrape, Clean, Load:
+<H2>Extract, Scrape, Clean, Load:</H2>
 ![Superhero network](/static/assets/images/Readme02.png)
 
 We download the data from Kaggle and scrape data from the SuperHero API and Clean data using pandas library in Python within a Jupyter notebook:[etl.ipynb](https://github.com/MiParekh/Project2---2020/blob/master/resources/etl.ipynb)
@@ -47,7 +48,7 @@ We download the data from Kaggle and scrape data from the SuperHero API and Cle
 Then load to SQLite.
 
 
-Create FlaskApp:
+<H2>Create FlaskApp:</H2>
 
 Python:  [flaskapp.py](https://github.com/MiParekh/Project2---2020/blob/master/flaskapp.py)
 
@@ -57,21 +58,21 @@ Jupyter Notebook:  [flaskapp.ipynb](https://github.com/MiParekh/Project2---2020/
 
 ![Superhero network](/static/assets/images/Readme03.png)
 
-Create Website:
+<H2>Create Website:</H2>
 
 Index: [Index.html](https://github.com/MiParekh/Project2---2020/blob/master/templates/index.html)
 
 ![Superhero network](/static/assets/images/Readme04.png)
 ![Superhero network](/static/assets/images/Readme05.png)
 
-Sunburst Analysis - Superhero Characteristics:
+<H2>Sunburst Analysis - Superhero Characteristics:</H2>
 
 Create sunburst chart to find the right superheroes using HTML, Javascript, and Amchart Sunburst: [Sunburst.html](https://github.com/MiParekh/Project2---2020/blob/master/templates/sunburst.html) and [Sunburst.js](https://github.com/MiParekh/Project2---2020/blob/master/static/js/sunburst.js).
 ![Superhero network](/static/assets/images/Readme06.png)
 
 To begin our analysis, let’s take a look at the characteristics of our top superheroes. For the top 158 superheroes ranked by total stats, we can review alignment. Good heroes out number bad heroes 94 to 50 with another 10 that are neutral, which puts us in a good position to recruit heroes to our cause. Within the 94 heroes, the publisher is Marvel for 55 heroes and DC for 32 heroes. We can also see that for the non-Marvel and DC heroes, all the top heroes are good which is a positive sign for us. Although Marvel has a higher number of good heroes vs. DC, DC has a slightly higher percentage of good heroes vs. bad heroes. DC is 32 good vs. 17 bad or 65% good. Marvel is 55 good vs. 33 bad or 63% good. On the outer ring of the sunburst, we can see all the top heroes in their respective alignment and publisher camps. Next, we can take a deeper dive into hero power stats as we move through our interactive superhero network analytics dashboard.
 
-Superpowers:
+<H2>Superpowers:</H2>
 
 Create scatter plot with interactive axis to display relationship of stats for the superheroes. [Scatter.js](https://github.com/MiParekh/Project2---2020/blob/master/static/js/scatter.js) [Scatter.html](https://github.com/MiParekh/Project2---2020/blob/master/templates/scatter.html). Include a correlation matrix as well. [Correlation_Matrix.ipynb](https://github.com/MiParekh/Project2---2020/blob/master/resources/correlation_matrix.ipynb). 
 
@@ -82,7 +83,7 @@ Generally speaking, there are moderate to strong correlations between all genera
 
 While a scatterplot is helpful to see the correlations between general attributes and scores for high level assessment, a deeper dive into individual superpowers is needed to thoroughly understand which heroes (and potentially villains) can help the most. For example, are there any superpowers that lead to a strong combination of durability and strength which can help with a real-world issue such as COVID-19.
 
-Top 150 Superheroes
+<H2>Top 150 Superheroes</H2>
 
 [Bar.js](https://github.com/MiParekh/Project2---2020/blob/master/static/js/bar.js) 
 
@@ -96,7 +97,7 @@ Top 150 Superheroes
 -Durability was the attribute with the highest average score (Mean: 86.6/Median: 90), while Speed was the lowest (Mean: 52.8/Median: 51)
 While a bar chart is helpful to see the which superheroes are the most versatile and their total rating, a deeper dive into individual superpowers is needed to thoroughly understand which heroes (and potentially villains) can help the most. For example, 48 superheroes had a durability rating of 100+, but is there any specific superpower that can help with a real-world issue such as COVID-19.
 
-Search Filter for Superhero or Issue
+<H2>Search Filter for Superhero or Issue</H2>
 
 [TableFilter.js](https://github.com/MiParekh/Project2---2020/blob/master/static/js/tableFilter.js) 
 
@@ -115,7 +116,7 @@ After thorough analysis, we determined the following:
 148 with Climate Change, with abilities such as Zatanna's Terrakinesis (potentially manipulate items from the earth) and Captain Atom's Radiation Control (is there any technology we can develop learning from these abilities).
 121 with Drug Addiction, with abilities such as Scarlet Witch's Illusions (to help show that addiction may cause to someone in the future) and Spider-Woman IV's Psionic powers (to potentially help people control addiction that want to be helped).
 
-Conclusion:
+<H2>Conclusion:</H2>
 ![Superhero network](/static/assets/images/Readme11.png)
 We need to find the superheroes that can solve the world’s most pressing issues. The Superhero Network interactive analytics dashboard gives YOU the ability to research the Superheroes by Characteristics, by Stats, by Powers so that YOU can draw your own insights and conclusions. Who will save the earth? We leave that up to YOU. Good luck and God Speed.
 
