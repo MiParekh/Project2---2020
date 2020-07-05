@@ -1,4 +1,4 @@
-Project-2- Superhero Network Interactive Analytics Dashboard
+#Project-2- Superhero Network Interactive Analytics Dashboard
 Team Members:
 
 Ryla Almario
@@ -97,9 +97,9 @@ While a bar chart is helpful to see the which superheroes are the most versatile
 
 Search Filter for Superhero or Issue
 
-[TableFilter.js](https://github.com/MiParekh/Project2---2020/blob/master/static/js/tablefilter.js) 
+[TableFilter.js](https://github.com/MiParekh/Project2---2020/blob/master/static/js/tableFilter.js) 
 
-[TableFilter.html](https://github.com/MiParekh/Project2---2020/blob/master/templates/tablefilter.html)
+[TableFilter.html](https://github.com/MiParekh/Project2---2020/blob/master/templates/tableFilter.html)
 ![Superhero network](/static/assets/images/Readme10.png)
 
 We identified 167 super abilities that exist among beings across the universe that can potentially assist with one or more current critical world issues which are (Medical (COVID - 19), Climate Change, Drug Addiction, Educational Improvements, Infrastructure Improvements, Large Scale Conflict).
