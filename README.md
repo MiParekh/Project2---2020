@@ -55,6 +55,7 @@ Index.html
 ![Superhero network](/static/assets/images/Readme05.png)
 
 Sunburst Analysis - Superhero Characteristics:
+
 Create sunburst chart to find the right superheroes using HTML, Javascript, and Amchart Sunburst.html and Sunburst.js.
 ![Superhero network](/static/assets/images/Readme06.png)
 
@@ -89,7 +90,9 @@ TableFilter.html
 
 We identified 167 super abilities that exist among beings across the universe that can potentially assist with one or more current critical world issues which are (Medical (COVID - 19), Climate Change, Drug Addiction, Educational Improvements, Infrastructure Improvements, Large Scale Conflict).
 We researched each power and identified an issue that it can potentially assist with. This interactive table below allows you to filter by superhero, critical world issue, or both to see who can potentially help save the day! Amongst the beings, the range of abilities in an individual went from 1 to 49 (with Spectre at the top). 21 of the beings had one or more identified ability in all 6 identified world issues.
+
 After thorough analysis, we determined the following:
+
 531 beings can potentially assist with Medical (COVID-19) issues, with abilities such as Aurora's MolecularManipulation (potentially assist with creating a cure), Deadpool's Regeneration (to potentially help with mass production), and Hulk'sToxin and Disease Control/Resistance.
 492 with Infrastructure improvements, with abilities such as Ardina's Energy Manipulation (to help process materials more efficiently for faster results), Thor's Weather Control (to temporarily halt short-term bad weather to allow for progress), and Doctor Strange's Flight (to potentially help move items to elevated locations more efficiently).
 432 with Large Scale Conflict, with abilities such as Camouflage, Danger Sense, and Weapons Master. These skills and more can be found in hero coalitions like the Avengers and the Justice League.
