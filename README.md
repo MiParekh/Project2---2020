@@ -12,7 +12,7 @@ Andrew Lau
 ![Superhero network](/static/assets/images/Readme01.png)
 
 
-We have created a superhero network which will help you get to know the profiles for superheroes from various publishers. Profile.html
+We have created a superhero network which will help you get to know the profiles for superheroes from various publishers. [Profile.html](https://github.com/MiParekh/Project2---2020/blob/master/templates/profile.html)
 We’ll also look into their characteristics, powers, and stats. Through an interactive analytics dashboard that includes a sunburst, scatter plot, radial bar chart, and hero filter we can find information about many of your favorite heroes.
 We’ll look at data over for over 700 superheroes and we’ll also find out how each of them can help solve the world’s most difficult problems. 
 Which superhero powers can save the earth?
