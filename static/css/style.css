@@ -16,4 +16,26 @@ select {
 
 .center-choice {
     text-align: center;
+    font-size-adjust: 0.58;
+}
+
+#table-area{
+    background-color: #E8E8E8;
+
+}
+
+.list-group-item{
+    background-color: #E8E8E8;
+}
+
+#resolution{
+    border:1px solid black;
+    border-radius: 4px;
+    height: 20px;
+
+}
+
+.form-control{
+    height: 32px;
+    width: 250px;
 }

@@ -64,7 +64,7 @@ def sunburst():
     return render_template("sunburst.html")
 
 @app.route("/tableFilter")
-def wordcloud():
+def tableFilter():
     return render_template("tableFilter.html")
 
 
