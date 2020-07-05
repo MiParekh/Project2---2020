@@ -5,7 +5,7 @@ Tamala
 Mitesh Parekh
 Andrew Lau
 
-![Superhero network](/static/assets/images/Readme1.png)
+![Superhero network](/static/assets/images/Readme01.png)
 
 
 We have created a superhero network which will help you get to know the profiles for superheroes from various publishers. Profile.html
