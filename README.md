@@ -72,7 +72,7 @@ Create sunburst chart to find the right superheroes using HTML, Javascript, and 
 
 To begin our analysis, let’s take a look at the characteristics of our top superheroes. For the top 158 superheroes ranked by total stats, we can review alignment. Good heroes out number bad heroes 94 to 50 with another 10 that are neutral, which puts us in a good position to recruit heroes to our cause. Within the 94 heroes, the publisher is Marvel for 55 heroes and DC for 32 heroes. We can also see that for the non-Marvel and DC heroes, all the top heroes are good which is a positive sign for us. Although Marvel has a higher number of good heroes vs. DC, DC has a slightly higher percentage of good heroes vs. bad heroes. DC is 32 good vs. 17 bad or 65% good. Marvel is 55 good vs. 33 bad or 63% good. On the outer ring of the sunburst, we can see all the top heroes in their respective alignment and publisher camps. Next, we can take a deeper dive into hero power stats as we move through our interactive superhero network analytics dashboard.
 
-<H2>Superpowers:</H2>
+<H2>Scatter Plot and Correlation Matrix - Superpowers</H2>
 
 Create scatter plot with interactive axis to display relationship of stats for the superheroes. [Scatter.js](https://github.com/MiParekh/Project2---2020/blob/master/static/js/scatter.js) [Scatter.html](https://github.com/MiParekh/Project2---2020/blob/master/templates/scatter.html). Include a correlation matrix as well. [Correlation_Matrix.ipynb](https://github.com/MiParekh/Project2---2020/blob/master/resources/correlation_matrix.ipynb). 
 
@@ -83,7 +83,7 @@ Generally speaking, there are moderate to strong correlations between all genera
 
 While a scatterplot is helpful to see the correlations between general attributes and scores for high level assessment, a deeper dive into individual superpowers is needed to thoroughly understand which heroes (and potentially villains) can help the most. For example, are there any superpowers that lead to a strong combination of durability and strength which can help with a real-world issue such as COVID-19.
 
-<H2>Top 150 Superheroes</H2>
+<H2>Radial Bar Chart - Top 150 Superheroes</H2>
 
 [Bar.js](https://github.com/MiParekh/Project2---2020/blob/master/static/js/bar.js) 
 
@@ -97,7 +97,7 @@ While a scatterplot is helpful to see the correlations between general attribute
 -Durability was the attribute with the highest average score (Mean: 86.6/Median: 90), while Speed was the lowest (Mean: 52.8/Median: 51)
 While a bar chart is helpful to see the which superheroes are the most versatile and their total rating, a deeper dive into individual superpowers is needed to thoroughly understand which heroes (and potentially villains) can help the most. For example, 48 superheroes had a durability rating of 100+, but is there any specific superpower that can help with a real-world issue such as COVID-19.
 
-<H2>Search Filter for Superhero or Issue</H2>
+<H2>Search Filter for Superhero or Real-World Issue</H2>
 
 [TableFilter.js](https://github.com/MiParekh/Project2---2020/blob/master/static/js/tableFilter.js) 
 
