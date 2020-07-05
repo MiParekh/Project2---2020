@@ -1,4 +1,5 @@
-#Project-2- Superhero Network Interactive Analytics Dashboard
+<H1>Superhero Network Interactive Analytics Dashboard</H1>
+
 Team Members:
 
 Ryla Almario
