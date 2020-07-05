@@ -124,4 +124,3 @@ We need to find the superheroes that can solve the world’s most pressing issue
 
 ![Superhero network](/static/assets/images/Readme12.png)
 
-![Superhero network](/static/assets/images/Readme11.png)
