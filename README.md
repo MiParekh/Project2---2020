@@ -82,8 +82,10 @@ Generally speaking, there are moderate to strong correlations between all genera
 While a scatterplot is helpful to see the correlations between general attributes and scores for high level assessment, a deeper dive into individual superpowers is needed to thoroughly understand which heroes (and potentially villains) can help the most. For example, are there any superpowers that lead to a strong combination of durability and strength which can help with a real-world issue such as COVID-19.
 
 Top 150 Superheroes
-Bar.js 
-Bar.html
+
+[Bar.js](https://github.com/MiParekh/Project2---2020/blob/master/static/js/bar.js) 
+
+[Bar.html](https://github.com/MiParekh/Project2---2020/blob/master/templates/bar.html)
 ![Superhero network](/static/assets/images/Readme09.png)
 
 -The average total score for the top 150 Superheroes was 434 (median:421), ranging from 356 to 581 (Martian Manhunter).
@@ -94,8 +96,10 @@ Bar.html
 While a bar chart is helpful to see the which superheroes are the most versatile and their total rating, a deeper dive into individual superpowers is needed to thoroughly understand which heroes (and potentially villains) can help the most. For example, 48 superheroes had a durability rating of 100+, but is there any specific superpower that can help with a real-world issue such as COVID-19.
 
 Search Filter for Superhero or Issue
-TableFilter.js 
-TableFilter.html
+
+[TableFilter.js](https://github.com/MiParekh/Project2---2020/blob/master/static/js/tablefilter.js) 
+
+[TableFilter.html](https://github.com/MiParekh/Project2---2020/blob/master/templates/tablefilter.html)
 ![Superhero network](/static/assets/images/Readme10.png)
 
 We identified 167 super abilities that exist among beings across the universe that can potentially assist with one or more current critical world issues which are (Medical (COVID - 19), Climate Change, Drug Addiction, Educational Improvements, Infrastructure Improvements, Large Scale Conflict).
