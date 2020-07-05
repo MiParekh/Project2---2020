@@ -88,6 +88,8 @@ While a scatterplot is helpful to see the correlations between general attribute
 [Bar.js](https://github.com/MiParekh/Project2---2020/blob/master/static/js/bar.js) 
 
 [Bar.html](https://github.com/MiParekh/Project2---2020/blob/master/templates/bar.html)
+
+
 ![Superhero network](/static/assets/images/Readme09.png)
 
 -The average total score for the top 150 Superheroes was 434 (median:421), ranging from 356 to 581 (Martian Manhunter).
