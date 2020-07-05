@@ -13,9 +13,12 @@ Andrew Lau
 
 
 We have created a superhero network which will help you get to know the profiles for superheroes from various publishers. [Profile.html](https://github.com/MiParekh/Project2---2020/blob/master/templates/profile.html)
+
 We’ll also look into their characteristics, powers, and stats. Through an interactive analytics dashboard that includes a sunburst, scatter plot, radial bar chart, and hero filter we can find information about many of your favorite heroes.
+
 We’ll look at data over for over 700 superheroes and we’ll also find out how each of them can help solve the world’s most difficult problems. 
 Which superhero powers can save the earth?
+
 We identified 167 super abilities that exist among beings across the universe that can potentially assist with one or more current critical world issues which are (Medical (COVID - 19), Climate Change, Drug Addiction, Educational Improvements, Infrastructure Improvements, Large Scale Conflict).
 
 After thorough analysis, we determined the following:
@@ -38,18 +41,18 @@ Questions:
 Extract, Scrape, Clean, Load:
 ![Superhero network](/static/assets/images/Readme02.png)
 
-We download the data from Kaggle and scrape data from the SuperHero API and Clean data using pandas library in Python within a Jupyter notebook: etl.ipynb. Then load to SQLite.
+We download the data from Kaggle and scrape data from the SuperHero API and Clean data using pandas library in Python within a Jupyter notebook:[etl.ipynb](https://github.com/MiParekh/Project2---2020/blob/master/resources/etl.ipynb)Then load to SQLite.
 
 
 Create FlaskApp:
 
-Python: flaskapp.py
-Jupyter Notebook: flaskapp.ipynb
-Feature_Character.html
+Python:  [flaskapp.py](https://github.com/MiParekh/Project2---2020/blob/master/flaskapp.py)
+Jupyter Notebook:  [flaskapp.ipynb](https://github.com/MiParekh/Project2---2020/blob/master/flask_app.ipynb)
+[Feature_Character.html](https://github.com/MiParekh/Project2---2020/blob/master/templates/feat_character.html)
 ![Superhero network](/static/assets/images/Readme03.png)
 
 Create Website:
-Index.html
+Index.html [Index.html](https://github.com/MiParekh/Project2---2020/blob/master/templates/index.html)
 
 ![Superhero network](/static/assets/images/Readme04.png)
 ![Superhero network](/static/assets/images/Readme05.png)
