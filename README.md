@@ -89,4 +89,4 @@ Conclusion:
 ![Superhero network](/static/assets/images/Readme12.png)
 We need to find the superheroes that can solve the world’s most pressing issues. The Superhero Network interactive analytics dashboard gives YOU the ability to research the Superheroes by Characteristics, by Stats, by Powers so that YOU can draw your own insights and conclusions. Who will save the earth? We leave that up to YOU. Good luck and God Speed.
 
-![Superhero network](/static/assets/images/Readme13png)
+![Superhero network](/static/assets/images/Readme13.png)
