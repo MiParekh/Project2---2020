@@ -41,32 +41,39 @@ Questions:
 Extract, Scrape, Clean, Load:
 ![Superhero network](/static/assets/images/Readme02.png)
 
-We download the data from Kaggle and scrape data from the SuperHero API and Clean data using pandas library in Python within a Jupyter notebook:[etl.ipynb](https://github.com/MiParekh/Project2---2020/blob/master/resources/etl.ipynb)Then load to SQLite.
+We download the data from Kaggle and scrape data from the SuperHero API and Clean data using pandas library in Python within a Jupyter notebook:[etl.ipynb](https://github.com/MiParekh/Project2---2020/blob/master/resources/etl.ipynb)
+
+Then load to SQLite.
 
 
 Create FlaskApp:
 
 Python:  [flaskapp.py](https://github.com/MiParekh/Project2---2020/blob/master/flaskapp.py)
+
 Jupyter Notebook:  [flaskapp.ipynb](https://github.com/MiParekh/Project2---2020/blob/master/flask_app.ipynb)
+
 [Feature_Character.html](https://github.com/MiParekh/Project2---2020/blob/master/templates/feat_character.html)
+
 ![Superhero network](/static/assets/images/Readme03.png)
 
 Create Website:
-Index.html [Index.html](https://github.com/MiParekh/Project2---2020/blob/master/templates/index.html)
+
+Index: [Index.html](https://github.com/MiParekh/Project2---2020/blob/master/templates/index.html)
 
 ![Superhero network](/static/assets/images/Readme04.png)
 ![Superhero network](/static/assets/images/Readme05.png)
 
 Sunburst Analysis - Superhero Characteristics:
 
-Create sunburst chart to find the right superheroes using HTML, Javascript, and Amchart Sunburst.html and Sunburst.js.
+Create sunburst chart to find the right superheroes using HTML, Javascript, and Amchart Sunburst: [Sunburst.html](https://github.com/MiParekh/Project2---2020/blob/master/templates/sunburst.html) and [Sunburst.js](https://github.com/MiParekh/Project2---2020/blob/master/static/js/sunburst.js).
 ![Superhero network](/static/assets/images/Readme06.png)
 
 To begin our analysis, let’s take a look at the characteristics of our top superheroes. For the top 158 superheroes ranked by total stats, we can review alignment. Good heroes out number bad heroes 94 to 50 with another 10 that are neutral, which puts us in a good position to recruit heroes to our cause. Within the 94 heroes, the publisher is Marvel for 55 heroes and DC for 32 heroes. We can also see that for the non-Marvel and DC heroes, all the top heroes are good which is a positive sign for us. Although Marvel has a higher number of good heroes vs. DC, DC has a slightly higher percentage of good heroes vs. bad heroes. DC is 32 good vs. 17 bad or 65% good. Marvel is 55 good vs. 33 bad or 63% good. On the outer ring of the sunburst, we can see all the top heroes in their respective alignment and publisher camps. Next, we can take a deeper dive into hero power stats as we move through our interactive superhero network analytics dashboard.
 
 Superpowers:
 
-Create scatter plot with interactive axis to display relationship of stats for the superheroes. Scatter.js Scatter.html. Include a correlation matrix as well. Correlation_Matrix.ipynb.
+Create scatter plot with interactive axis to display relationship of stats for the superheroes. [Scatter.js](https://github.com/MiParekh/Project2---2020/blob/master/static/js/scatter.js) [Scatter.html](https://github.com/MiParekh/Project2---2020/blob/master/templates/scatter.html). Include a correlation matrix as well. [Correlation_Matrix.ipynb](https://github.com/MiParekh/Project2---2020/blob/master/resources/correlation_matrix.ipynb). 
+
 ![Superhero network](/static/assets/images/Readme07.png)
 ![Superhero network](/static/assets/images/Readme08.png)
 
