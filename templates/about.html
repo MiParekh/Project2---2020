@@ -13,10 +13,10 @@
   <meta name="msapplication-tap-highlight" content="no">
   <link href="{{ url_for('static', filename='assets/apple-icon-180x180.png') }}" rel="apple-touch-icon">
   <link href="../assets/favicon.ico" rel="icon">
-  <title>Bar | The Superhero Network</title>
+  <title>Home | The Superhero Network</title>
   <link href="{{ url_for('static', filename='css/main.82cfd66e.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/d3style.css') }}">
+
 </head>
 
 <body>
@@ -26,7 +26,8 @@
         <div class="site-header hidden-xs">
           <a class="site-brand" href="/" title="">
             <img class="img-responsive site-logo" alt=""
-              src="{{ url_for('static', filename='assets/images/bcs.png') }}">  
+              src="{{ url_for('static', filename='assets/images/bcs.png') }}">
+            
           </a>
         </div>
         <ul class="nav">
@@ -48,53 +49,16 @@
       </div>
     </nav>
   </header>
-  
-  <main class="" id="main-collapse">
-    <div class="row">
-      <div class="col-xs-12 col-md-8">
-
-        <div class="section-container-spacer">
-          <h2>Top 150 Superheroes</h2>
-          <div id="bar">
-            <!-- insert bar chart -->
-          </div>
-          <a>
-            <img class="img-responsive site-logo" alt="Bar Chart Legend" src="{{ url_for('static', filename='assets/images/bar_legend.png') }}" width=150px height=auto>  
-          </a>
-          <hr>
-          <h6>Bar Chart Analysis</h6>
-          <p>
-            The top 150 characters with highest total power statistics were further analyzed.
-          </p>
-          <p>
-            The average total score for the top 150 Superheroes was 434 with median of 421, 
-            ranging from 356 to 581 (Martian Manhunter).
-          </p>
-          <p> 
-            There are 24 superheroes and villains had a total score of 500 or more.
-          </p>
-          <p> 
-            The number of superheroes and villains with a 100+ score in a general attribute: Intelligence(16), Strength(24)
-              Speed (10), Durability(48), Power(49), Combat(10).
-          </p>
-          <p> 
-            A total of 94 or 63% of the top 150 are good superheroes as shown by blue markers.
-          </p>
-          <p>
-            Durability is the attribute with the highest average score with mean of 86.6 and median of 90,
-            while Speed is the lowest with mean score of 52.8 and median of 51.
-          </p>
-          <hr>
-          <p>
-            While a bar chart is helpful to see the which superheroes are the most versatile and their total rating,
-            a deeper dive into individual superpowers is needed to thoroughly understand which superheroes 
-            can help the most. For example, 48 superheroes had a durability rating of 100+,
-            but is there any specific superpower that can help with a real world issue such as COVID-19.
-          </p>
-        </div>
     
-    </div>
+  <main class="" id="main-collapse">
 
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function (event) {
+        masonryBuild();
+      });
+    </script>
 
   </main>
 
@@ -117,12 +81,9 @@
     crossorigin="anonymous"></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3-scale-radial.js"></script>
 
   <!-- Prebuilt script element -->
-  <script type="text/javascript" src="{{ url_for('static', filename='js/main.85741bff.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename='js/bar.js') }}"></script>
-
+  <script type="text/javascript" src="main.85741bff.js"></script>
 
 
 </body>

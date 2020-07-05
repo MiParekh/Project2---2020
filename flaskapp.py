@@ -67,6 +67,10 @@ def sunburst():
 def tableFilter():
     return render_template("tableFilter.html")
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
 
 
 
