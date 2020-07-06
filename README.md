@@ -4,7 +4,7 @@ Team Members:
 
 Ryla Almario
 
-Tamala
+Tamala Chipeta
 
 Mitesh Parekh
 
