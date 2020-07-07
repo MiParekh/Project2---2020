@@ -32,7 +32,7 @@ After thorough analysis, we determined the following:
 
 <H2>Dependencies</H2>
 
-This project requires SuperHero API, Jupyter Notebook, Python, Pandas, SQLite, FlaskApp, JSON, HTML, CSS, Javascript, D3, Amcharts, Heroku.
+This project requires SuperHero API, Jupyter Notebook, Python, Pandas, SQLite, FlaskApp, JSON, HTML, CSS, Javascript, D3, Amcharts, Chart.js, and Heroku.
 
 <H2>Questions:</H2>
 
@@ -63,7 +63,7 @@ Jupyter Notebook:  [flaskapp.ipynb](https://github.com/MiParekh/Project2---2020/
 Index: [Index.html](https://github.com/MiParekh/Project2---2020/blob/master/templates/index.html)
 
 ![Superhero network](/static/assets/images/Readme04.png)
-![Superhero network](/static/assets/images/Readme05.png)
+![Superhero network](/static/assets/images/Readme14.png)
 
 <H2>Sunburst Analysis - Superhero Characteristics:</H2>
 
@@ -104,7 +104,8 @@ While a bar chart is helpful to see the which superheroes are the most versatile
 [TableFilter.js](https://github.com/MiParekh/Project2---2020/blob/master/static/js/tableFilter.js) 
 
 [TableFilter.html](https://github.com/MiParekh/Project2---2020/blob/master/templates/tableFilter.html)
-![Superhero network](/static/assets/images/Readme10.png)
+![Superhero network](/static/assets/images/Readme13.png)
+![Superhero network](/static/assets/images/table.png)
 
 We identified 167 super abilities that exist among beings across the universe that can potentially assist with one or more current critical world issues which are Medical (COVID - 19), Climate Change, Drug Addiction, Educational Improvements, Infrastructure Improvements, Large Scale Conflict.
 We researched each power and identified an issue that it can potentially assist with. This interactive table below allows you to filter by superhero, critical world issue, or both to see who can potentially help save the day! Amongst the beings, the range of abilities in an individual went from 1 to 49 (with Spectre at the top). 21 of the beings had one or more identified ability in all 6 identified world issues.
