@@ -106,7 +106,7 @@ While a bar chart is helpful to see the which superheroes are the most versatile
 [TableFilter.html](https://github.com/MiParekh/Project2---2020/blob/master/templates/tableFilter.html)
 ![Superhero network](/static/assets/images/Readme10.png)
 
-We identified 167 super abilities that exist among beings across the universe that can potentially assist with one or more current critical world issues which are (Medical (COVID - 19), Climate Change, Drug Addiction, Educational Improvements, Infrastructure Improvements, Large Scale Conflict).
+We identified 167 super abilities that exist among beings across the universe that can potentially assist with one or more current critical world issues which are Medical (COVID - 19), Climate Change, Drug Addiction, Educational Improvements, Infrastructure Improvements, Large Scale Conflict.
 We researched each power and identified an issue that it can potentially assist with. This interactive table below allows you to filter by superhero, critical world issue, or both to see who can potentially help save the day! Amongst the beings, the range of abilities in an individual went from 1 to 49 (with Spectre at the top). 21 of the beings had one or more identified ability in all 6 identified world issues.
 
 After thorough analysis, we determined the following:
@@ -117,6 +117,8 @@ After thorough analysis, we determined the following:
 244 with Education Improvements, with abilities such as Maxima's Mind Blast (can we "place" information determined to be universally helpful and critical into people’s minds who want to learn more), Power Girl's Enhanced Memory (to potentially help with retaining complex large scale information for like doctoral professions) and Brainiac's Omnilingualism (can assist with language deciphering amongs humans and animals).
 148 with Climate Change, with abilities such as Zatanna's Terrakinesis (potentially manipulate items from the earth) and Captain Atom's Radiation Control (is there any technology we can develop learning from these abilities).
 121 with Drug Addiction, with abilities such as Scarlet Witch's Illusions (to help show that addiction may cause to someone in the future) and Spider-Woman IV's Psionic powers (to potentially help people control addiction that want to be helped).
+The Miscellaneous category can't be ignored! 337 beings have abilities that fall into this category. These include abilities
+that could fall under multiple issues already discussed above, or they were in a league of their own. With more reasearch, we might be able to connected to the right issue to overcome.
 
 <H2>Conclusion:</H2>
 
