@@ -27,7 +27,7 @@
         <div class="site-header hidden-xs">
           <a class="site-brand" href="/" title="">
             <img class="img-responsive site-logo" alt=""
-              src="{{ url_for('static', filename='assets/images/bcs.PNG') }}">  
+              src="{{ url_for('static', filename='assets/images/bcs.PNG') }}">
           </a>
         </div>
         <ul class="nav">
@@ -42,7 +42,7 @@
         </ul>
 
         <nav class="nav-footer">
-           <p>© BCS COMICS | Created with <a href="http://www.mashup-template.com/"
+          <p>© BCS COMICS | Created with <a href="http://www.mashup-template.com/"
               title="Create website with free html template">Mashup Template</a>/<a href="https://www.unsplash.com/"
               title="Beautiful Free Images">Unsplash</a></p>
         </nav>
@@ -57,6 +57,14 @@
         <div class="section-container-spacer">
           <h2>The Superheroes Who Can Save the Earth</h2>
           <br>
+          <br>
+          <br>
+          <canvas id="myChart"></canvas>
+          <br>
+          <br>
+          <br>
+          <br>
+
           <h4>Analysis</h4>
           <p>We identified 167 super abilities that exist among beings across the universe that can potentially assist
             with one or more current critical world issues which are (Medical (COVID - 19), Climate Change, Drug
@@ -101,6 +109,11 @@
               someone in the future) and Spider-Woman IV's Psionic powers (to potentially help people control addiction
               that want to be
               helped).</li>
+              <li>
+                The Miscellaneous category can't be ignored! 337 beings have abilities that fall into this category. These include abilities
+                that could fall under multiple issues already discussed above, or they were in a league of their own. With more reasearch, 
+                we might be able to connected to the right issue to overcome.
+              </li>
           </ul>
           <br>
           <hr>
@@ -108,7 +121,7 @@
 
           <!-- Includes input, select dropdown, & search button -->
           <div class="container" id="table-area">
-            
+
             <!-- Search header -->
             <div class="row align-items-center">
               <div class="col-lg-12">
@@ -121,53 +134,54 @@
               <div class="form-row align-items-center">
                 <!-- Input Hero -->
                 <div class="col-md-4 my-1">
-                    <aside class="filters">
-                      <div class="panel-heading">
-                        <h4>Search Hero</h4>
+                  <aside class="filters">
+                    <div class="panel-heading">
+                      <h4>Search Hero</h4>
+                    </div>
+                    <div class="panel-body">
+                      <div class="form-group">
+                        <ul class="list-group" id="filters">
+                          <!-- <li class=""> -->
+                          <input class="form-control" id="hero" type="text" placeholder="Superman">
+                          <!-- </li> -->
+                        </ul>
                       </div>
-                      <div class="panel-body">
-                        <div class="form-group">
-                          <ul class="list-group" id="filters">
-                            <!-- <li class=""> -->
-                              <input class="form-control" id="hero" type="text" placeholder="Superman">
-                            <!-- </li> -->
-                          </ul>
-                        </div>
-                      </div>
-                    </aside>
+                    </div>
+                  </aside>
                 </div>
 
 
                 <!-- Dropdown Menu -->
                 <div class="col-md-4 my-1">
-                    <aside class="filters">
-                      <div class="panel-heading">
-                        <h4>Search Issue</h4>
+                  <aside class="filters">
+                    <div class="panel-heading">
+                      <h4>Search Issue</h4>
+                    </div>
+                    <div class="panel-body">
+                      <div class="form-group">
+                        <ul class="list-group" id="filters">
+                          <li class="filter list-group-item">
+                            <select id="resolution">
+                              <option value=""></option>
+                              <option value="Medical (COVID-19)">Medical (COVID-19)</option>
+                              <option value="Large Scale Conflict">Large Scale Conflict</option>
+                              <option value="Infrastructure Improvements">Infrastructure Improvements</option>
+                              <option value="Miscellaneous">Miscellaneous</option>
+                              <option value="Climate Change">Climate Change</option>
+                              <option value="Education Improvements">Education Improvements</option>
+                              <option value="Drug Addiction">Drug Addiction</option>
+                            </select>
+                          </li>
+                        </ul>
                       </div>
-                      <div class="panel-body">
-                        <div class="form-group">
-                          <ul class="list-group" id="filters">
-                            <li class="filter list-group-item">
-                              <select id="resolution">
-                                <option value=""></option>
-                                <option value="Medical (COVID-19)">Medical (COVID-19)</option>
-                                <option value="Large Scale Conflict">Large Scale Conflict</option>
-                                <option value="Infrastructure Improvements">Infrastructure Improvements</option>
-                                <option value="Miscellaneous">Miscellaneous</option>
-                                <option value="Climate Change">Climate Change</option>
-                                <option value="Education Improvements">Education Improvements</option>
-                                <option value="Drug Addiction">Drug Addiction</option>
-                              </select>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </aside>
+                    </div>
+                  </aside>
                 </div>
                 <div class="col-md-4 my-1">
                   <br>
                   <br>
                   <br>
+                  <!-- Search button to activate new filtered table -->
                   <button id="filter-btn" type="button" class="btn btn-primary">Search</button>
                 </div>
               </div>
@@ -228,7 +242,7 @@
 </script>
 
 -->
-  <!-- Added D3, JQuery, Bootstrap -->
+  <!-- Added D3, JQuery, Bootstrap, Chart.js -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -240,7 +254,7 @@
     crossorigin="anonymous"></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
 
   <!-- Connect to tableFilter.js -->
   <script type="text/javascript" src="{{ url_for('static', filename='js/tableFilter.js') }}"></script>
