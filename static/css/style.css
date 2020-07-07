@@ -40,6 +40,41 @@ select {
     width: 250px;
 }
 
+/* centering table in tableFilter.html */
+.center {
+  margin: 0 auto
+}
+
+aside.filters {
+    display: inline-block
+}
+
+#table-area {
+text-align: center;
+}
+div.col-md-10{
+    width: 100%;
+}
+.table{
+  width: 100%;
+  max-width: 100%;
+}
+#filters{
+  text-align: center;
+}
+div.form-group{
+  text-align: center;
+}
+
+div.form-row{
+  text-align: center;
+}
+th.table-head {
+  text-align: center;
+}
+
+
+/* Radial Bar Chart in bar.html */
 .bar::before {
     position: absolute;
     top: 50px;
