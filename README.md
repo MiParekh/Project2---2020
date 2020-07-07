@@ -104,8 +104,8 @@ While a bar chart is helpful to see the which superheroes are the most versatile
 [TableFilter.js](https://github.com/MiParekh/Project2---2020/blob/master/static/js/tableFilter.js) 
 
 [TableFilter.html](https://github.com/MiParekh/Project2---2020/blob/master/templates/tableFilter.html)
-![Superhero network](/static/assets/images/Readme13.png)
-![Superhero network](/static/assets/images/table.png)
+![Superhero network](/static/assets/images/Readme13.PNG)
+![Superhero network](/static/assets/images/table.PNG)
 
 We identified 167 super abilities that exist among beings across the universe that can potentially assist with one or more current critical world issues which are Medical (COVID - 19), Climate Change, Drug Addiction, Educational Improvements, Infrastructure Improvements, Large Scale Conflict.
 We researched each power and identified an issue that it can potentially assist with. This interactive table below allows you to filter by superhero, critical world issue, or both to see who can potentially help save the day! Amongst the beings, the range of abilities in an individual went from 1 to 49 (with Spectre at the top). 21 of the beings had one or more identified ability in all 6 identified world issues.
