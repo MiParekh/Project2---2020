@@ -67,3 +67,98 @@ d3.json(rwpowers).then(function(hero) {
     });
 
 });
+
+// Radar chart
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+        labels: ['Medical (COVID-19)', "Large Scale Conflict", "Infrastructure Improvements", "Miscellaneous",
+            "Climate Change", "Education Improvements", "Drug Addiction"],
+        datasets: [
+            {
+                label: 'SuperHeros',
+                backgroundColor: 'rgba(255, 80, 80,0.2)',
+                borderColor: 'rgba(255, 80, 80,1)',
+                data: [531, 492, 432, 337,244, 148, 121]
+ 
+            },
+            {
+                label: 'Spectre',
+                backgroundColor: 'rgba(255,99,132,0.2)',
+                borderColor: 'pink',
+                data: [11, 4, 12, 7, 4, 6, 5]
+ 
+            },
+            {
+                label: 'Amazo',
+                backgroundColor: 'rgba(179,181,198,0.2)',
+                borderColor: 'rgba(179,181,198,1)',
+                data: [14, 8, 11, 6, 2, 3, 0]
+ 
+            },
+            {
+                label: 'Living Tribunal',
+                backgroundColor: 'rgba(255, 204, 0,0.2)',
+                borderColor: 'rgba(255, 204, 0,1)',
+                data: [7, 8, 9, 5, 2, 3]
+ 
+            },
+            {
+                label: 'Martian Manhunter',
+                backgroundColor: 'rgba(51, 204, 51,0.2)',
+                borderColor: 'rgba(51, 204, 51,1)',
+                data: [11, 5, 8, 6, 0, 3, 2]
+ 
+            },
+            {
+                label: 'Captain Marvel',
+                backgroundColor: 'rgba(204, 51, 0,0.2)',
+                borderColor: 'rgba(204, 51, 0,1)',
+                data: [12, 4, 7,4, 1, 3, 2]
+ 
+            },
+            {
+                label: 'Franklin Richards',
+                backgroundColor: 'rgba(204, 102, 255,0.2)',
+                borderColor: 'rgba(204, 102, 255,1)',
+                data: [12, 2, 6, 2,0, 5, 2]
+ 
+            },
+            {
+                label: 'Wonder Woman',
+                backgroundColor: 'rgba(153, 51, 102,0.2)',
+                borderColor: 'rgba(153, 51, 102,1)',
+                data: [9, 8, 3, 6,0, 3, 1]
+ 
+            },
+            {
+                label: 'Galactus',
+                backgroundColor: 'rgba(0, 0, 255,0.2)',
+                borderColor: 'rgba(0, 0, 255,1)',
+                data: [12, 3, 8, 4,1, 3, 1]
+ 
+            },
+            {
+                label: 'Supergirl',
+                backgroundColor: 'rgba(255, 0, 102,0.2)',
+                borderColor: 'rgba(255, 0, 102,1)',
+                data: [10, 4, 5, 4,1, 2, 1]
+ 
+            },
+            {
+                label: 'Superman',
+                backgroundColor: 'rgba(153, 204, 255,0.2)',
+                borderColor: 'rgba(153, 204, 255,1)',
+                data: [10, 4, 6, 5, 1, 2, 1]
+ 
+            }],
+        options: {
+            title: {
+                display: true,
+                text: 'Top Superheros Who Can Help'
+            }
+        }
+    }
+ 
+});
