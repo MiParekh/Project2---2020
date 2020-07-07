@@ -72,7 +72,7 @@ div.form-row{
 th.table-head {
   text-align: center;
 }
-
+/* tableFilter.html end */
 
 /* Radial Bar Chart in bar.html */
 .bar::before {
@@ -191,3 +191,4 @@ th.table-head {
       font-size: 13px;
     }
   }
+  /* bar.html end */
