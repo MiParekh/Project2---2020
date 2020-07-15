@@ -1,14 +1,8 @@
 <H1>Superhero Network Interactive Analytics Dashboard</H1>
 
-Team Members:
+Team Members: Ryla Almario, Tamala Chipeta, Mitesh Parekh, Andrew Lau
 
-Ryla Almario
-
-Tamala Chipeta
-
-Mitesh Parekh
-
-Andrew Lau
+Our Website: https://superheroes-bcs.herokuapp.com/
 
 ![Superhero network](/static/assets/images/Readme01.png)
 
